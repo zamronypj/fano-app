@@ -23,3 +23,8 @@
 # Verbosity, show errors (e), warning (w), notes (n), hints (h)
 #----------------------------------------------
 -Vewnh
+
+#----------------------------------------------
+# Application Unit search path
+#----------------------------------------------
+-Fuapp/Dependencies

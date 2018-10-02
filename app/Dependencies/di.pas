@@ -8,7 +8,8 @@ interface
 
 uses
     DependencyAwareIntf,
-    DependencyContainerIntf;
+    DependencyContainerIntf,
+    DependencyContainerImpl;
 
 type
 
