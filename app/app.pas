@@ -4,10 +4,10 @@
 ------------------------------------------------}
 program app;
 
-uses fano;
+uses fano, ConfigImpl;
 
 type
-    TWebApp = class(TFanoApplication)
+    TWebApp = class(TFanoWebApplication)
     end;
 
     TWebAppConfig = class(TFanoConfig)
