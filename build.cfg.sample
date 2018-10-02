@@ -1,0 +1,10 @@
+# User configuration
+
+# Level 3 optimization
+-O3
+
+# Target OS
+-Tlinux
+
+# Verbosity, show errors (e), warning (w), notes (n), hints (h)
+-Vewnh
