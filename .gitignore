@@ -1,0 +1,3 @@
+build.cfg
+storages/logs/*
+!storages/logs/README.md
