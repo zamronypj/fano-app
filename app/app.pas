@@ -1,3 +1,7 @@
+{-----------------------------------------------
+ Bootstrap application
+ @author Zamrony P. Juhara <zamronypj@yahoo.com>
+------------------------------------------------}
 program app;
 
 uses fano;
