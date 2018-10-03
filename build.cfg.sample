@@ -10,7 +10,20 @@
 -Sewn
 
 #----------------------------------------------
+# Generate debugging information for debugging with gdb.
+# For production, this should be commented out
+#----------------------------------------------
+#-g
+
+#----------------------------------------------
+# verbose for debugging purpose
+# For production, this should be commented out
+#----------------------------------------------
+#-vd
+
+#----------------------------------------------
 # Level 3 optimization
+# For development, turn off this
 #----------------------------------------------
 -O3
 

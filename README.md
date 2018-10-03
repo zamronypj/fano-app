@@ -17,6 +17,15 @@ Copy `build.cfg.sample` to `build.cfg`. Make adjustment as you need and run `bui
 
 By default, it will output binary executable in `public` directory.
 
-### Setup virtual host
+## Run
+
+### Run with a webserver
 
 Setup a virtual host. Please consult documentation of web server you use.
+
+### Simulate run on command line
+
+    $ REQUEST_METHOD=GET \
+      REQUEST_URI=/test/test \
+      SERVER_NAME=juhara.com \
+      ./public/app.cgi
