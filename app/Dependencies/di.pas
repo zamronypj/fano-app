@@ -1,5 +1,6 @@
 {-----------------------------------------------
- Bootstrap application
+ Register application dependencies
+
  @author Zamrony P. Juhara <zamronypj@yahoo.com>
 ------------------------------------------------}
 unit di;
@@ -17,17 +18,23 @@ type
     end;
 
 var
-    appDI : IDependencyContainer;
+    appDependencyContainer : IDependencyContainer;
 
 implementation
 
 uses
-    RouteCollectionFactoryImpl;
+    DispatcherFactoryImpl,
+    DispatcherFactoryImpl,
+    RouteCollectionFactoryImpl,
+    config;
 
 initialization
 
-    appDI := TServiceContainer.create();
-    appDI.add('router', TRouterCollectionFactory.create());
+    appDependencyContainer := TServiceContainer.create();
+    appDI.add('config', TWebAppConfigFactory.create(appDependencyContainer));
+    appDI.add('dispatcher', TDispatcherFactory.create(appDependencyContainer));
+    appDI.add('router', TRouterCollectionFactory.create(appDependencyContainer));
+    appDI.add('environment', TWebEnvironmentFactory.create(appDependencyContainer));
 
 finalization
     appDI := nil;
