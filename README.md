@@ -10,9 +10,10 @@ Pascal web application framework
 ## Installation
 
 ### Build
-Rename `build.cfg.sample` to `build.cfg`. Make adjustment as you need and run `build.sh` shell script.
+Copy `build.cfg.sample` to `build.cfg`. Make adjustment as you need and run `build.sh` shell script.
 
-    $./build.sh
+    $ cp build.cfg.sample build.cfg
+    $ ./build.sh
 
 By default, it will output binary executable in `public` directory.
 
