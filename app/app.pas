@@ -11,6 +11,11 @@ uses
     di;
 
 type
+
+    {------------------------------------
+    Base application Bootstrap
+    @author Zamrony P. Juhara <zamronypj@yahoo.com>
+    -------------------------------------}
     TWebApp = class(TFanoWebApplication)
     end;
 
@@ -28,7 +33,6 @@ begin
         );
         appInstance.run();
     finally
-        appConfig := nil;
         appInstance := nil;
     end;
 end.

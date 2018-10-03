@@ -25,6 +25,14 @@
 -Vewnh
 
 #----------------------------------------------
+# Verbose unit searching info,
+# Remove comment, in case unit file is not found
+# so FreePascal will output verbose message where
+# it tries to look for unit file
+#----------------------------------------------
+#-vut
+
+#----------------------------------------------
 # Application Unit search path
 #----------------------------------------------
 -Fuapp/Dependencies
