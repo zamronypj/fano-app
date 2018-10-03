@@ -26,16 +26,24 @@ uses
     EnvironmentFactoryImpl,
     DispatcherFactoryImpl,
     RouteCollectionFactoryImpl,
-    AppConfig;
+    AppConfig,
+    AppConfigFactoryImpl,
+    DependencyListImpl;
 
 initialization
 
-    appDependencyContainer := TServiceContainer.create();
-    appDI.add('config', TWebAppConfigFactory.create(appDependencyContainer));
-    appDI.add('dispatcher', TDispatcherFactory.create(appDependencyContainer));
-    appDI.add('router', TRouterCollectionFactory.create(appDependencyContainer));
-    appDI.add('environment', TWebEnvironmentFactory.create(appDependencyContainer));
+    appDependencyContainer := TServiceContainer.create(TDependencyList.create());
+    appDependencyContainer.add(
+        'config',
+        TWebAppConfigFactory.create(
+            appDependencyContainer,
+            '../config/config.json'
+        )
+    );
+    appDependencyContainer.add('dispatcher', TDispatcherFactory.create(appDependencyContainer));
+    appDependencyContainer.add('router', TRouteCollectionFactory.create(appDependencyContainer));
+    appDependencyContainer.add('environment', TWebEnvironmentFactory.create(appDependencyContainer));
 
 finalization
-    appDI := nil;
+    appDependencyContainer := nil;
 end.

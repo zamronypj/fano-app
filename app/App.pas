@@ -5,10 +5,15 @@
 program app;
 
 uses
+    AppIntf,
     AppImpl,
+    ConfigIntf,
     ConfigImpl,
     AppConfig,
-    di;
+    di,
+    RouteCollectionIntf,
+    EnvironmentIntf,
+    DispatcherIntf;
 
 type
 
@@ -25,11 +30,11 @@ var
 begin
     try
         appInstance := TWebApp.create(
-            appDI.get('config'),
-            appDI.get('dispatcher'),
-            appDI.get('environment'),
-            appDI.get('router'),
-            appDI
+            appDependencyContainer.get('config') as IWebConfiguration,
+            appDependencyContainer.get('dispatcher') as IDispatcher,
+            appDependencyContainer.get('environment') as IWebEnvironment,
+            appDependencyContainer.get('router') as IRouteCollection,
+            appDependencyContainer
         );
         appInstance.run();
     finally
