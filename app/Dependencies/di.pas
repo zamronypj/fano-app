@@ -23,7 +23,7 @@ var
 implementation
 
 uses
-    DispatcherFactoryImpl,
+    EnvironmentFactoryImpl,
     DispatcherFactoryImpl,
     RouteCollectionFactoryImpl,
     config;
