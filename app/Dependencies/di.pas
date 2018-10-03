@@ -26,7 +26,7 @@ uses
     EnvironmentFactoryImpl,
     DispatcherFactoryImpl,
     RouteCollectionFactoryImpl,
-    config;
+    AppConfig;
 
 initialization
 
