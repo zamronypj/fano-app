@@ -1,3 +1,3 @@
 #!/bin/bash
 
-fpc @build.cfg app/app.pas
+fpc @build.cfg app/App.pas
