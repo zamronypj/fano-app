@@ -1,3 +1,4 @@
+app/config/config.json
 app/public/.htaccess
 app/public/app.cgi
 build.cfg
