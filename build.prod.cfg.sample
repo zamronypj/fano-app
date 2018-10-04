@@ -13,3 +13,9 @@
 # Level 3 optimization
 #----------------------------------------------
 -O3
+
+#----------------------------------------------
+# Strip all debug information and symbols
+# from output executable
+#----------------------------------------------
+-Xs

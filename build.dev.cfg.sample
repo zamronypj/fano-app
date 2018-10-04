@@ -11,9 +11,8 @@
 
 #----------------------------------------------
 # Generate debugging information for debugging with gdb.
-# For production, this should be commented out
 #----------------------------------------------
--g
+-gl
 
 #----------------------------------------------
 # verbose for debugging purpose
