@@ -6,7 +6,8 @@ uses
     ConfigFactoryIntf,
     DependencyAwareIntf,
     DependencyContainerIntf,
-    DependencyFactoryIntf;
+    DependencyFactoryIntf,
+    FactoryImpl;
 
 type
     {------------------------------------------------
@@ -14,14 +15,12 @@ type
      get config
      @author Zamrony P. Juhara <zamronypj@yahoo.com>
     -----------------------------------------------}
-    TWebAppConfigFactory = class (TInterfacedObject, IWebConfigurationFactory, IDependencyFactory)
+    TWebAppConfigFactory = class (TFactory, IWebConfigurationFactory, IDependencyFactory)
     private
         configFilename : string;
-        dependencyContainer : IDependencyContainer;
     public
         constructor create(const dc : IDependencyContainer; const configFile :string);
-        destructor destroy(); override;
-        function build() : IDependencyAware;
+        function build() : IDependencyAware; override;
     end;
 
 implementation
@@ -31,13 +30,8 @@ uses
 
     constructor TWebAppConfigFactory.create(const dc : IDependencyContainer; const configFile : string);
     begin
-        dependencyContainer := dc;
+        inherited create(dc);
         configFilename := configFile;
-    end;
-
-    destructor TWebAppConfigFactory.destroy();
-    begin
-        dependencyContainer := nil;
     end;
 
     function TWebAppConfigFactory.build() : IDependencyAware;
