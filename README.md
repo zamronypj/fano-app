@@ -14,12 +14,15 @@ Pascal web application framework
 Copy `*.cfg.sample` to `*.cfg`. Make adjustment as you need in
 `build.cfg`, `build.prod.cfg`, `build.dev.cfg` and run `build.sh` shell script.
 
+Also copy `app/config/config.json.sample` to `app/config/config.json`.
+
+    $ cp app/config/config.json.sample app/config/config.json
     $ cp build.prod.cfg.sample build.prod.cfg
     $ cp build.dev.cfg.sample build.dev.cfg
     $ cp build.cfg.sample build.cfg
     $ ./build.sh
 
-By default, it will output binary executable in `public` directory.
+By default, it will output binary executable in `app/public` directory.
 
 ### Build for different environment
 
