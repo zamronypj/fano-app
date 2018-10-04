@@ -8,7 +8,6 @@ uses
     AppIntf,
     AppImpl,
     ConfigIntf,
-    ConfigImpl,
     RouteCollectionIntf,
     EnvironmentIntf,
     DispatcherIntf,
