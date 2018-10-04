@@ -52,7 +52,7 @@ to move it to different location, you can set `FANO_DIR` environment variable
 ## Change executable output directory
 
 Compilation will output executable to directory defined in `EXEC_OUTPUT_DIR`
-environment variable. By default is `public` directory.
+environment variable. By default is `app/public` directory.
 
     $ EXEC_OUTPUT_DIR=/path/to/public/dir ./build.sh
 
