@@ -15,6 +15,7 @@ uses
     RouteCollectionIntf,
     TemplateFileViewImpl,
     ViewParamsImpl,
+    OutputBufferIntf,
     HelloController;
 
 var router : IRouteCollection;

@@ -76,19 +76,13 @@ For example on Apache,
      ServerName www.example.com
      DocumentRoot /home/example/app/public
 
-     ScriptAlias /cgi-bin/ "/home/example/app/cgi-bin/"
-
-     <Directory "/home/example/app/cgi-bin/">
+     <Directory "/home/example/app/public">
          Options +ExecCGI
+         AllowOverride FileInfo
+         Require all granted
+         DirectoryIndex app.cgi
          AddHandler cgi-script .cgi
      </Directory>
-
-     <IfModule mod_rewrite.c>
-         RewriteEngine On
-         RewriteCond %{REQUEST_FILENAME} !-d
-         RewriteCond %{REQUEST_FILENAME} !-f
-         RewriteRule ^((?s).*)$ /cgi-bin/app.cgi?_url=/$1 [QSA,L]
-     </IfModule>
 </VirtualHost>
 ```
 

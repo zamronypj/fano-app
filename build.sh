@@ -17,7 +17,7 @@ if [[ -z "${UNIT_OUTPUT_DIR}" ]]; then
 fi
 
 if [[ -z "${EXEC_OUTPUT_DIR}" ]]; then
-export EXEC_OUTPUT_DIR="app/cgi-bin"
+export EXEC_OUTPUT_DIR="app/public"
 fi
 
 if [[ -z "${EXEC_OUTPUT_NAME}" ]]; then

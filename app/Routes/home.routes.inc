@@ -2,7 +2,8 @@ router.get(
     '/',
     THelloController.create(
         TTemplateFileView.create(
-            getCurrentDir() + '/app/Templates/Hello/index.html'
+            appDependencyContainer.get('outputBuffer') as IOutputBuffer,
+            ExtractFilePath(getCurrentDir()) + '/Templates/Hello/index.html'
         ),
         TViewParameters.create()
     )

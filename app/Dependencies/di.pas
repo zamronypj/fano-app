@@ -29,6 +29,7 @@ uses
     EnvironmentFactoryImpl,
     DispatcherFactoryImpl,
     RouteCollectionFactoryImpl,
+    OutputBufferFactoryImpl,
     AppConfig,
     AppConfigFactoryImpl,
     DependencyListImpl;
@@ -46,6 +47,7 @@ initialization
     appDependencyContainer.add('dispatcher', TDispatcherFactory.create(appDependencyContainer));
     appDependencyContainer.add('router', TRouteCollectionFactory.create(appDependencyContainer));
     appDependencyContainer.add('environment', TWebEnvironmentFactory.create(appDependencyContainer));
+    appDependencyContainer.add('outputBuffer', TOutputBufferFactory.create(appDependencyContainer));
 
     {$INCLUDE controllers.dependencies.inc}
 finalization
