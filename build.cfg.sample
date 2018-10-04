@@ -22,8 +22,4 @@
 # For example
 # $ BUILD_TYPE=prod ./build.sh
 #----------------------------------------------
-#IFDEF $BUILD_TYPE$
 #INCLUDE build.$BUILD_TYPE$.cfg
-#ELSE
-#INCLUDE build.prod.cfg
-#ENDIF
