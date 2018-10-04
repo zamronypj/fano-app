@@ -9,21 +9,11 @@ uses
     AppImpl,
     ConfigIntf,
     ConfigImpl,
-    AppConfig,
     RouteCollectionIntf,
     EnvironmentIntf,
     DispatcherIntf,
     di,
     routes;
-
-type
-
-    {------------------------------------
-    Base application Bootstrap
-    @author Zamrony P. Juhara <zamronypj@yahoo.com>
-    -------------------------------------}
-    TWebApp = class(TFanoWebApplication)
-    end;
 
 var
     {------------------------------------
@@ -33,7 +23,7 @@ var
 
 begin
     try
-        appInstance := TWebApp.create(
+        appInstance := TFanoWebApplication.create(
             appDependencyContainer.get('config') as IWebConfiguration,
             appDependencyContainer.get('dispatcher') as IDispatcher,
             appDependencyContainer.get('environment') as IWebEnvironment,

@@ -1,6 +1,6 @@
 appDependencyContainer.add(
     'config',
-    TWebAppConfigFactory.create(
+    TConfigFactory.create(
         appDependencyContainer,
         '../config/config.json'
     )

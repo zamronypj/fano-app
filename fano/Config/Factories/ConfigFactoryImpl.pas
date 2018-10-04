@@ -1,4 +1,4 @@
-unit AppConfigFactoryImpl;
+unit ConfigFactoryImpl;
 
 interface
 
@@ -11,10 +11,10 @@ uses
 
 type
     {------------------------------------------------
-     factory class for TWebAppConfig
+     factory class for TFanoConfig
      @author Zamrony P. Juhara <zamronypj@yahoo.com>
     -----------------------------------------------}
-    TWebAppConfigFactory = class (TFactory, IWebConfigurationFactory, IDependencyFactory)
+    TFanoConfigFactory = class (TFactory, IWebConfigurationFactory, IDependencyFactory)
     private
         configFilename : string;
     public
@@ -25,17 +25,17 @@ type
 implementation
 
 uses
-    AppConfig;
+    ConfigImpl;
 
-    constructor TWebAppConfigFactory.create(const dc : IDependencyContainer; const configFile : string);
+    constructor TFanoConfigFactory.create(const dc : IDependencyContainer; const configFile : string);
     begin
         inherited create(dc);
         configFilename := configFile;
     end;
 
-    function TWebAppConfigFactory.build() : IDependencyAware;
+    function TFanoConfigFactory.build() : IDependencyAware;
     begin
-        result := TWebAppConfig.create(configFilename);
+        result := TFanoConfig.create(configFilename);
     end;
 
 end.
