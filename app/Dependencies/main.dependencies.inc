@@ -1,6 +1,6 @@
 appDependencyContainer.add(
     'config',
-    TConfigFactory.create(
+    TFanoConfigFactory.create(
         appDependencyContainer,
         '../config/config.json'
     )

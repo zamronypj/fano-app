@@ -12,11 +12,6 @@ uses
     DependencyContainerIntf,
     DependencyContainerImpl;
 
-type
-
-    TServiceContainer = class(TDependencyContainer)
-    end;
-
 var
     {------------------------------------
     global dependency container instance
@@ -30,13 +25,13 @@ uses
     DispatcherFactoryImpl,
     RouteCollectionFactoryImpl,
     OutputBufferFactoryImpl,
-    AppConfig,
-    AppConfigFactoryImpl,
+    ConfigImpl,
+    ConfigFactoryImpl,
     DependencyListImpl;
 
 initialization
 
-    appDependencyContainer := TServiceContainer.create(TDependencyList.create());
+    appDependencyContainer := TDependencyContainer.create(TDependencyList.create());
     {$INCLUDE main.dependencies.inc}
     {$INCLUDE controllers.dependencies.inc}
 
