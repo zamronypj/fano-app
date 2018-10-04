@@ -11,7 +11,8 @@ Pascal web application framework
 
 ### Build
 
-Copy `*.cfg.sample` to `*.cfg`. Make adjustment as you need and run `build.sh` shell script.
+Copy `*.cfg.sample` to `*.cfg`. Make adjustment as you need in
+`build.cfg`, `build.prod.cfg`, `build.dev.cfg` and run `build.sh` shell script.
 
     $ cp build.prod.cfg.sample build.prod.cfg
     $ cp build.dev.cfg.sample build.dev.cfg
