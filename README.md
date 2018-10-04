@@ -46,6 +46,20 @@ to move it to different location, you can set `FANO_DIR` environment variable
 
     $ FANO_DIR=/path/to/fano ./build.sh
 
+## Change executable output directory
+
+Compilation will output executable to directory defined in `EXEC_OUTPUT_DIR`
+environment variable. By default is `public` directory.
+
+    $ EXEC_OUTPUT_DIR=/path/to/public/dir ./build.sh
+
+## Change executable name
+
+Compilation will use executable filename as defined in `EXEC_OUTPUT_NAME`
+environment variable. By default is `app.cgi` filename.
+
+    $ EXEC_OUTPUT_NAME=server.cgi ./build.sh
+
 ## Run
 
 ### Run with a webserver
