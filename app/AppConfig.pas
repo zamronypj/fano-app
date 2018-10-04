@@ -3,10 +3,7 @@ unit AppConfig;
 interface
 
 uses
-    AppImpl,
-    ConfigImpl,
-    DependencyAwareIntf,
-    di;
+    ConfigImpl;
 
 type
     {-----------------------------------------------

@@ -3,7 +3,6 @@ unit AppConfigFactoryImpl;
 interface
 
 uses
-    ConfigIntf,
     ConfigFactoryIntf,
     DependencyAwareIntf,
     DependencyContainerIntf,
