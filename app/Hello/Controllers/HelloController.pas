@@ -5,7 +5,6 @@ interface
 uses
     ResponseIntf,
     RequestIntf,
-    RouteHandlerIntf,
     ControllerImpl;
 
 type
@@ -19,9 +18,6 @@ type
     end;
 
 implementation
-
-uses
-    ViewParamsIntf;
 
     function THelloController.handleRequest(
           const request : IRequest;
