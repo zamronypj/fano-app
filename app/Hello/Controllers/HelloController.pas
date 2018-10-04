@@ -20,12 +20,15 @@ type
 
 implementation
 
+uses
+    ViewParamsIntf;
+
     function THelloController.handleRequest(
           const request : IRequest;
           const response : IResponse
     ) : IResponse;
     begin
-        result := gView.render('views/template/home.html', response);
+        result := gView.render(viewParams, response);
     end;
 
 end.

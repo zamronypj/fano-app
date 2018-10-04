@@ -10,8 +10,11 @@ interface
 implementation
 
 uses
+    sysutils,
     di,
     RouteCollectionIntf,
+    TemplateFileViewImpl,
+    ViewParamsImpl,
     HelloController;
 
 var router : IRouteCollection;
@@ -19,7 +22,7 @@ var router : IRouteCollection;
 initialization
 
     router := appDependencyContainer.get('router') as IRouteCollection;
-    router.get('/', THelloController.create());
+    {$include home.routes.inc}
 
 finalization
     router := nil;

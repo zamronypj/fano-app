@@ -10,10 +10,11 @@ uses
     ConfigIntf,
     ConfigImpl,
     AppConfig,
-    di,
     RouteCollectionIntf,
     EnvironmentIntf,
-    DispatcherIntf;
+    DispatcherIntf,
+    di,
+    routes;
 
 type
 
@@ -25,6 +26,9 @@ type
     end;
 
 var
+    {------------------------------------
+    global application instance
+    -------------------------------------}
     appInstance : IWebApplication;
 
 begin

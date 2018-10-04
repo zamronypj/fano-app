@@ -1,5 +1,5 @@
-public/.htaccess
-public/app.cgi
+app/public/.htaccess
+app/public/app.cgi
 build.cfg
 build.dev.cfg
 build.prod.cfg

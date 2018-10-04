@@ -18,6 +18,9 @@ type
     end;
 
 var
+    {------------------------------------
+    global dependency container instance
+    -------------------------------------}
     appDependencyContainer : IDependencyContainer;
 
 implementation
@@ -44,6 +47,7 @@ initialization
     appDependencyContainer.add('router', TRouteCollectionFactory.create(appDependencyContainer));
     appDependencyContainer.add('environment', TWebEnvironmentFactory.create(appDependencyContainer));
 
+    {$INCLUDE controllers.dependencies.inc}
 finalization
     appDependencyContainer := nil;
 end.
