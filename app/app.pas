@@ -11,7 +11,15 @@ uses
     RouteCollectionIntf,
     EnvironmentIntf,
     DispatcherIntf,
+
+    {------------------------------------
+    Register application dependencies
+    -------------------------------------}
     di,
+
+    {------------------------------------
+    Register application routes
+    -------------------------------------}
     routes;
 
 var
