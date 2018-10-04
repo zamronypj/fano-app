@@ -1,6 +1,6 @@
 app/config/config.json
 app/public/.htaccess
-app/public/app.cgi
+app/cgi-bin/app.cgi
 build.cfg
 build.dev.cfg
 build.prod.cfg

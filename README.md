@@ -69,6 +69,29 @@ environment variable. By default is `app.cgi` filename.
 
 Setup a virtual host. Please consult documentation of web server you use.
 
+For example on Apache,
+
+```
+<VirtualHost *:80>
+     ServerName www.example.com
+     DocumentRoot /home/example/app/public
+
+     ScriptAlias /cgi-bin/ "/home/example/app/cgi-bin/"
+
+     <Directory "/home/example/app/cgi-bin/">
+         Options +ExecCGI
+         AddHandler cgi-script .cgi
+     </Directory>
+
+     <IfModule mod_rewrite.c>
+         RewriteEngine On
+         RewriteCond %{REQUEST_FILENAME} !-d
+         RewriteCond %{REQUEST_FILENAME} !-f
+         RewriteRule ^((?s).*)$ /cgi-bin/app.cgi?_url=/$1 [QSA,L]
+     </IfModule>
+</VirtualHost>
+```
+
 ### Simulate run on command line
 
     $ REQUEST_METHOD=GET \
