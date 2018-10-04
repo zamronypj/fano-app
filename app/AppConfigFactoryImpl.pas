@@ -11,8 +11,7 @@ uses
 
 type
     {------------------------------------------------
-     interface for any class having capability to
-     get config
+     factory class for TWebAppConfig
      @author Zamrony P. Juhara <zamronypj@yahoo.com>
     -----------------------------------------------}
     TWebAppConfigFactory = class (TFactory, IWebConfigurationFactory, IDependencyFactory)
