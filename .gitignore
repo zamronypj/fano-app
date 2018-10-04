@@ -1,6 +1,8 @@
 public/.htaccess
 public/app.cgi
 build.cfg
+build.dev.cfg
+build.prod.cfg
 storages/logs/*
 !storages/logs/README.md
 bin/*

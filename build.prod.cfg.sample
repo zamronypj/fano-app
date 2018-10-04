@@ -1,0 +1,15 @@
+#----------------------------------------------
+# User configuration for production build
+# Please see FreePascal Documentation for available
+# compiler configurations
+#----------------------------------------------
+
+#----------------------------------------------
+# halt compiler after error
+#----------------------------------------------
+-Se
+
+#----------------------------------------------
+# Level 3 optimization
+#----------------------------------------------
+-O3

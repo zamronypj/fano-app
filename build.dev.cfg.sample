@@ -1,0 +1,34 @@
+#----------------------------------------------
+# User configuration for development build
+# Please see FreePascal Documentation for available
+# compiler configurations
+#----------------------------------------------
+
+#----------------------------------------------
+# halt compiler after error, warning and notes
+#----------------------------------------------
+-Sewn
+
+#----------------------------------------------
+# Generate debugging information for debugging with gdb.
+# For production, this should be commented out
+#----------------------------------------------
+-g
+
+#----------------------------------------------
+# verbose for debugging purpose
+#----------------------------------------------
+-vd
+
+#----------------------------------------------
+# Verbosity, show errors (e), warning (w), notes (n), hints (h)
+#----------------------------------------------
+-Vewnh
+
+#----------------------------------------------
+# Verbose unit searching info,
+# Remove comment, in case unit file is not found
+# so FreePascal will output verbose message where
+# it tries to look for unit file
+#----------------------------------------------
+#-vut

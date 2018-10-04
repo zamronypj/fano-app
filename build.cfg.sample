@@ -5,47 +5,22 @@
 #----------------------------------------------
 
 #----------------------------------------------
-# halt compiler after error, warning and notes
-#----------------------------------------------
--Sewn
-
-#----------------------------------------------
-# Generate debugging information for debugging with gdb.
-# For production, this should be commented out
-#----------------------------------------------
-#-g
-
-#----------------------------------------------
-# verbose for debugging purpose
-# For production, this should be commented out
-#----------------------------------------------
-#-vd
-
-#----------------------------------------------
-# Level 3 optimization
-# For development, turn off this
-#----------------------------------------------
--O3
-
-#----------------------------------------------
 # Target OS
 #----------------------------------------------
 -Tlinux
 
 #----------------------------------------------
-# Verbosity, show errors (e), warning (w), notes (n), hints (h)
-#----------------------------------------------
--Vewnh
-
-#----------------------------------------------
-# Verbose unit searching info,
-# Remove comment, in case unit file is not found
-# so FreePascal will output verbose message where
-# it tries to look for unit file
-#----------------------------------------------
-#-vut
-
-#----------------------------------------------
 # Application Unit search path
 #----------------------------------------------
 -Fuapp/Dependencies
+
+#----------------------------------------------
+# Include configuration based on build type (default is prod)
+# For example
+# $ BUILD_TYPE=prod ./build.sh
+#----------------------------------------------
+#IFDEF $BUILD_TYPE$
+#INCLUDE build.$BUILD_TYPE$.cfg
+#ELSE
+#INCLUDE build.prod.cfg
+#ENDIF
