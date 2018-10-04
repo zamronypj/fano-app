@@ -11,8 +11,11 @@
 
 #----------------------------------------------
 # Application Unit search path
+# USER_APP_DIR is contains user application base directory
 #----------------------------------------------
--Fuapp/Dependencies
+-Fu$USER_APP_DIR$/Dependencies
+#-Fu$USER_APP_DIR$/path/to/other/units
+#-Fu$USER_APP_DIR$/path/to/other/units
 
 #----------------------------------------------
 # Include configuration based on build type (default is prod)
