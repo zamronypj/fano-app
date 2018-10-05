@@ -31,9 +31,9 @@ var
 begin
     try
         appInstance := TFanoWebApplication.create(
-            appDependencyContainer.get('config') as IWebConfiguration,
+            appDependencyContainer.get('config') as IAppConfiguration,
             appDependencyContainer.get('dispatcher') as IDispatcher,
-            appDependencyContainer.get('environment') as IWebEnvironment,
+            appDependencyContainer.get('environment') as ICGIEnvironment,
             appDependencyContainer.get('router') as IRouteCollection,
             appDependencyContainer
         );
