@@ -25,7 +25,7 @@ var router : IRouteCollection;
 initialization
 
     router := appDependencyContainer.get('router') as IRouteCollection;
-    {$include home.routes.inc}
+    {$include home/routes.inc}
 
 finalization
     router := nil;
