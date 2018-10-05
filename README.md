@@ -85,10 +85,17 @@ For example on Apache,
      </Directory>
 </VirtualHost>
 ```
+On Apache, you will need to enable CGI module, such as `mod_cgi`. If CGI module not loaded, above virtual host will cause `app.cgi` is downloaded instead of executed.
+
+For example, on Debian, this will enable `mod_cgi` module.
+```
+$ sudo a2enmod cgi
+$ sudo systemctl restart apache2
+```
 
 ### Simulate run on command line
 
     $ REQUEST_METHOD=GET \
       REQUEST_URI=/test/test \
       SERVER_NAME=juhara.com \
-      ./public/app.cgi
+      .app/public/app.cgi
