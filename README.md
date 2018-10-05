@@ -99,3 +99,16 @@ $ sudo systemctl restart apache2
       REQUEST_URI=/test/test \
       SERVER_NAME=juhara.com \
       .app/public/app.cgi
+
+## Known Issues
+
+When running `build.sh` script, you may encounter following warning:
+
+```
+/usr/bin/ld: warning: app/public/link.res contains output sections; did you forget -T?
+```
+
+This is known issue between FreePascal and GNU Linker.
+There is few workaround such as adding `-k` compiler options that will be passed to GNU Linker.
+
+However this warning is minor and can be ignored as it does not affect output executable.
