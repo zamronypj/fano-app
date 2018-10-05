@@ -13,6 +13,8 @@ router.get(
 
             ExtractFilePath(getCurrentDir()) + '/Templates/Hello/index.html'
         ),
-        TViewParameters.create()
+        (TViewParameters.create())
+            .setVar('baseDir', 'http://fano.zamroni')
+            .setVar('name', 'zzzaam')
     )
 );
