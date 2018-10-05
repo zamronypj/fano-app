@@ -11,8 +11,10 @@ router.get(
                 '}}'
             ),
 
-            ExtractFilePath(getCurrentDir()) + '/Templates/Hello/index.html'
+            //TODO need to be set independently
+            //ExtractFilePath(getCurrentDir()) + '/Templates/Hello/landing.html'
+            getCurrentDir() + '/app/Templates/Hello/landing.html'
         ),
-        TViewParameters.create()
+        (TViewParameters.create()).setVar('baseDir', 'http://fano.zamroni')
     )
 );
