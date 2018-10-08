@@ -27,7 +27,8 @@ uses
     OutputBufferFactoryImpl,
     ConfigImpl,
     ConfigFactoryImpl,
-    DependencyListImpl;
+    DependencyListImpl,
+    MiddlewareCollectionFactoryImpl;
 
 initialization
 
