@@ -15,7 +15,7 @@ router.get(
         ),
         (TViewParameters.create())
             .setVar('baseUrl', 'http://fano.zamroni')
-            .setVar('name', 'zzzaam')
+            .setVar('name', 'Fano')
             .setVar('appName', 'Fano Web Framework')
     )
 );
