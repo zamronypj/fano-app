@@ -13,6 +13,7 @@ uses
     sysutils,
     di,
     RouteCollectionIntf,
+    MiddlewareCollectionIntf,
     TemplateFileViewImpl,
     ViewParamsImpl,
     OutputBufferIntf,

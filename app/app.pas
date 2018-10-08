@@ -36,7 +36,7 @@ begin
             appDependencyContainer.get('dispatcher') as IDispatcher,
             appDependencyContainer.get('environment') as ICGIEnvironment,
             appDependencyContainer.get('router') as IRouteCollection,
-            appDependencyContainer.get('middlewares') as IMiddlewareCollection
+            appDependencyContainer.get('appMiddlewares') as IMiddlewareCollection
         );
         appInstance.run();
     finally
