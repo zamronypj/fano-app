@@ -11,6 +11,13 @@ uses
     MiddlewareCollectionIntf;
 
 type
+
+    PMiddlewareChainRec = ^TMiddlewareChainRec;
+    TMiddlewareChainRec = record
+        mw : IMiddleware;
+        next : PMiddlewareChainRec;
+    end;
+
     {------------------------------------------------
      interface for any class having capability to
      manage one or more middlewares
@@ -18,61 +25,51 @@ type
     -----------------------------------------------}
     TMiddlewareChain = class(TInterfacedObject, IMiddlewareChain)
     private
-        middlewareList : IMiddlewareCollection;
-        currentIndex : integer;
+        chain : PMiddlewareChainRec;
     public
         constructor create(const middlewares : IMiddlewareCollection);
         destructor destroy(); override;
 
-        function handleChainedRequest(
-            const request : IRequest;
-            const response : IResponse;
-            const middleware : IRequestHandler
-        ) : IResponse;
-        function next() : IRequestHandler;
+        function executeChain() : IResponse;
     end;
 
 implementation
 
     constructor TMiddlewareChain.create(const middlewares : IMiddlewareCollection);
+    var item : PMiddlewareChainRec;
     begin
         middlewareList := middlewares;
-        currentIndex := 0;
+        chain := nil;
+        for i:=0 to len-2 do
+        begin
+            if (chain = nil) then
+            begin
+              new(chain);
+              chain^.current := middlewareList.get(i);
+              chain^.next := nil;
+            end;
+        end;
     end;
 
     destructor TMiddlewareChain.destroy();
+    var chain :PMiddlewareChainRec;
     begin
         inherited destroy();
-        middlewareList := nil;
+        for i:=len-1 downto 0 do
+        begin
+            chain := chainList[i];
+            chain^.current := nil;
+            chain^.next := nil;
+            dispose(chain);
+            chainList.delete(i);
+        end;
+        chainList.free();
     end;
 
-    function TMiddlewareChain.handleChainedRequest(
-        const request : IRequest;
-        const response : IResponse;
-        const middleware : IRequestHandler
-    ) : IResponse;
-    var newResponse : IResponse;
+    function TMiddlewareChain.executeChain() : IResponse;
     begin
-        if (middleware <> nil) then
-        begin
-            newResponse := middleware.handleRequest(request, response);
-            result := handleChainedRequest(request, newResponse, next());
-        end else
-        begin
-            result := response;
-        end;
+        chain^.current.handleChainedRequest(request, response, chain^.next);
     end;
 
-    function TMiddlewareChain.next() : IRequestHandler;
-    begin
-        if (currentIndex < middlewareList.count() - 1) then
-        begin
-            inc(currentIndex);
-            result := middlewareList.get(currentIndex);
-        end else
-        begin
-            result := nil;
-        end;
-    end;
 
 end.

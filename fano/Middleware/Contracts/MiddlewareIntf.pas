@@ -3,7 +3,6 @@ unit MiddlewareIntf;
 interface
 
 uses
-   RequestHandlerIntf;
 
 type
     {------------------------------------------------
@@ -11,8 +10,13 @@ type
      handler route
      @author Zamrony P. Juhara <zamronypj@yahoo.com>
     -----------------------------------------------}
-    IMiddleware = interface (IRequestHandler)
+    IMiddleware = interface
         ['{E0ECB41C-8D8F-41C1-9FAC-7DFBD06ED8D4}']
+        function handleChainedRequest(
+            const request : IRequest;
+            const response : IResponse;
+            const nextMiddleware : IMiddleware
+        ) : IResponse;
     end;
 
 implementation
