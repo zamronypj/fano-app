@@ -8,7 +8,7 @@ unit di;
 interface
 
 uses
-    DependencyAwareIntf,
+    DependencyIntf,
     DependencyContainerIntf,
     DependencyContainerImpl;
 
