@@ -1,7 +1,8 @@
 router.get(
     '/',
     THelloController.create(
-        appDependencyContainer.get('routeMiddlewares') as IMiddlewareCollection,
+        routeMiddlewares.getBeforeMiddlewares(),
+        routeMiddlewares.getBeforeMiddlewares(),
         TTemplateFileView.create(
             appDependencyContainer.get('outputBuffer') as IOutputBuffer,
 

@@ -28,7 +28,7 @@ uses
     ConfigImpl,
     ConfigFactoryImpl,
     DependencyListImpl,
-    MiddlewareCollectionFactoryImpl;
+    MiddlewareCollectionAwareFactoryImpl;
 
 initialization
 

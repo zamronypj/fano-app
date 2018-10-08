@@ -11,8 +11,8 @@ appDependencyContainer.add('environment', TCGIEnvironmentFactory.create(appDepen
 appDependencyContainer.add('outputBuffer', TOutputBufferFactory.create(appDependencyContainer));
 
 ///middleware list for application level
-appDependencyContainer.add('appMiddlewares', TMiddlewareCollectionFactory.create(appDependencyContainer));
+appDependencyContainer.add('appMiddlewares', TMiddlewareCollectionAwareFactory.create(appDependencyContainer));
 
 ///middleware list for each routes,
 ///need to be use factory so each route will have different middleware list
-appDependencyContainer.factory('routeMiddlewares', TMiddlewareCollectionFactory.create(appDependencyContainer));
+appDependencyContainer.factory('routeMiddlewares', TMiddlewareCollectionAwareFactory.create(appDependencyContainer));

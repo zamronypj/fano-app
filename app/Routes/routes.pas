@@ -14,6 +14,7 @@ uses
     di,
     RouteCollectionIntf,
     MiddlewareCollectionIntf,
+    MiddlewareCollectionAwareIntf,
     TemplateFileViewImpl,
     ViewParamsImpl,
     OutputBufferIntf,
@@ -22,10 +23,12 @@ uses
     HelloController;
 
 var router : IRouteCollection;
+    routeMiddlewares : IMiddlewareCollectionAware;
 
 initialization
 
     router := appDependencyContainer.get('router') as IRouteCollection;
+    routeMiddlewares := appDependencyContainer.get('routeMiddlewares') as IMiddlewareCollectionAware;
     {$include home/routes.inc}
 
 finalization

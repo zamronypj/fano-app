@@ -9,7 +9,7 @@ uses
     AppImpl,
     ConfigIntf,
     RouteCollectionIntf,
-    MiddlewareCollectionIntf,
+    MiddlewareCollectionAwareIntf,
     EnvironmentIntf,
     DispatcherIntf,
 
@@ -36,7 +36,7 @@ begin
             appDependencyContainer.get('dispatcher') as IDispatcher,
             appDependencyContainer.get('environment') as ICGIEnvironment,
             appDependencyContainer.get('router') as IRouteCollection,
-            appDependencyContainer.get('appMiddlewares') as IMiddlewareCollection
+            appDependencyContainer.get('appMiddlewares') as IMiddlewareCollectionAware
         );
         appInstance.run();
     finally

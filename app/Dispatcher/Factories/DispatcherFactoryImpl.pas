@@ -25,16 +25,20 @@ implementation
 
 uses
     RouteMatcherIntf,
-    MiddlewareCollectionIntf,
+    MiddlewareCollectionAwareIntf,
     DispatcherImpl,
     RequestFactoryImpl,
     ResponseFactoryImpl,
     MiddlewareChainFactoryImpl;
 
     function TDispatcherFactory.build() : IDependency;
+    var appMiddlewares : IMiddlewareCollectionAware;
     begin
+        appMiddlewares := dependencyContainer.get('appMiddlewares') as IMiddlewareCollectionAware;
+
         result := TDispatcher.create(
-            dependencyContainer.get('appMiddlewares') as IMiddlewareCollection,
+            appMiddlewares.getBeforeMiddlewares(),
+            appMiddlewares.getAfterMiddlewares(),
             TMiddlewareChainFactory.create(),
             dependencyContainer.get('router') as IRouteMatcher,
             TResponseFactory.create(dependencyContainer),
