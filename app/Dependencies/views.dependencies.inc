@@ -1,1 +1,1 @@
-appDependencyContainer.add('templateParser', TTemplateParserFactory.create(appDependencyContainer));
+appDependencyContainer.add('templateParser', TTemplateParserFactory.create());

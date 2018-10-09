@@ -5,6 +5,7 @@
 program app;
 
 uses
+    sysutils,
     AppIntf,
     AppImpl,
     ConfigIntf,
@@ -24,24 +25,30 @@ uses
     -------------------------------------}
     routes;
 
-var
     {------------------------------------
-    global application instance
+    application
     -------------------------------------}
-    appInstance : IWebApplication;
+    procedure runApp();
+    var
+        appInstance : IWebApplication;
+        errorHandler : IErrorHandler;
+    begin
+        try
+            errorHandler := appDependencyContainer.get('errorHandler') as IErrorHandler;
+            appInstance := TFanoWebApplication.create(
+                appDependencyContainer.get('dispatcher') as IDispatcher,
+                appDependencyContainer.get('environment') as ICGIEnvironment,
+                errorHandler
+            );
+            appInstance.run();
+        except
+            on e : Exception do
+            begin
+                errorHandler.handleError(e);
+            end;
+        end;
+    end;
 
 begin
-    try
-        appInstance := TFanoWebApplication.create(
-            appDependencyContainer.get('config') as IAppConfiguration,
-            appDependencyContainer.get('dispatcher') as IDispatcher,
-            appDependencyContainer.get('environment') as ICGIEnvironment,
-            appDependencyContainer.get('router') as IRouteCollection,
-            appDependencyContainer.get('appMiddlewares') as IMiddlewareCollectionAware,
-            appDependencyContainer.get('errorHandler') as IErrorHandler
-        );
-        appInstance.run();
-    finally
-        appInstance := nil;
-    end;
+    runApp();
 end.

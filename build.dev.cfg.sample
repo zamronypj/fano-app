@@ -11,8 +11,19 @@
 
 #----------------------------------------------
 # Generate debugging information for debugging with gdb.
+# For production, this should be commented out
+#----------------------------------------------
+-g
+
+#----------------------------------------------
+# Generate debugging information for debugging with gdb.
 #----------------------------------------------
 -gl
+
+#----------------------------------------------
+# Turn on heap trace for checking memory leak.
+#----------------------------------------------
+-gh
 
 #----------------------------------------------
 # verbose for debugging purpose

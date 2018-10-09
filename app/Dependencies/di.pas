@@ -23,12 +23,14 @@ implementation
 uses
     EnvironmentFactoryImpl,
     DispatcherFactoryImpl,
+    RouteMatcherIntf,
     RouteCollectionFactoryImpl,
     OutputBufferFactoryImpl,
     ErrorHandlerFactoryImpl,
     ConfigImpl,
     ConfigFactoryImpl,
     DependencyListImpl,
+    MiddlewareCollectionAwareIntf,
     MiddlewareCollectionAwareFactoryImpl,
     TemplateParserFactoryImpl;
 

@@ -26,9 +26,14 @@ var router : IRouteCollection;
 
 initialization
 
-    router := appDependencyContainer.get('router') as IRouteCollection;
-    routeMiddlewares := appDependencyContainer.get('routeMiddlewares') as IMiddlewareCollectionAware;
-    {$include home/routes.inc}
+    try
+        router := appDependencyContainer.get('router') as IRouteCollection;
+        routeMiddlewares := appDependencyContainer.get('routeMiddlewares') as IMiddlewareCollectionAware;
+        {$INCLUDE home/routes.inc}
+    except
+        router := nil;
+        routeMiddlewares := nil;
+    end;
 
 finalization
     router := nil;
