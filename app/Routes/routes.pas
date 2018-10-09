@@ -33,4 +33,5 @@ initialization
 
 finalization
     router := nil;
+    routeMiddlewares := nil;
 end.
