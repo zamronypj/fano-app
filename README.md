@@ -32,13 +32,13 @@ To build for different environment, set `BUILD_TYPE` environment variable.
 
     $ BUILD_TYPE=prod ./build.sh
 
-Build process will use compiler configuration defined in `build.cfg` and `build.prod.cfg`.
+Build process will use compiler configuration defined in `fpc.cfg`, `build.cfg` and `build.prod.cfg`.
 
 #### Build for development environment
 
     $ BUILD_TYPE=dev ./build.sh
 
-Build process will use compiler configuration defined in `build.cfg` and `build.dev.cfg`.
+Build process will use compiler configuration defined in `fpc.cfg`, `build.cfg` and `build.dev.cfg`.
 
 If `BUILD_TYPE` environment variable is not set, production environment will be assumed.
 
@@ -92,6 +92,19 @@ For example, on Debian, this will enable `mod_cgi` module.
 $ sudo a2enmod cgi
 $ sudo systemctl restart apache2
 ```
+
+Depending on your server setup, for example, if  you use `.htaccess`, add following code:
+
+```
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ app.cgi [L]
+</IfModule>
+```
+
+Which basically tells Apache to serve existing files/directories directly. For any non-existing files/directories, pass them to our application.
 
 ### Simulate run on command line
 
