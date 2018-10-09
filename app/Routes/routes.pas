@@ -16,10 +16,9 @@ uses
     MiddlewareCollectionIntf,
     MiddlewareCollectionAwareIntf,
     TemplateFileViewImpl,
+    TemplateParserIntf,
     ViewParamsImpl,
     OutputBufferIntf,
-    TemplateParserImpl,
-    RegexImpl,
     HelloController;
 
 var router : IRouteCollection;

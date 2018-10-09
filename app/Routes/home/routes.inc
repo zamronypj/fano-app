@@ -5,17 +5,10 @@ router.get(
         routeMiddlewares.getBeforeMiddlewares(),
         TTemplateFileView.create(
             appDependencyContainer.get('outputBuffer') as IOutputBuffer,
-
-            //replace any variable {{ variableName }} with value
-            TTemplateParser.create(
-                TRegex.create(),
-                '{{',
-                '}}'
-            ),
-
+            appDependencyContainer.get('templateParser') as ITemplateParser,
             //TODO need to be set independently
-            //ExtractFilePath(getCurrentDir()) + '/Templates/Hello/index.html'
-            getCurrentDir() + '/app/Templates/Hello/index.html'
+            ExtractFilePath(getCurrentDir()) + '/Templates/Hello/index.html'
+            //getCurrentDir() + '/app/Templates/Hello/index.html'
         ),
         (TViewParameters.create())
             .setVar('baseUrl', 'http://fano.zamroni')
