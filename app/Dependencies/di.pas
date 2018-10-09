@@ -21,11 +21,13 @@ var
 implementation
 
 uses
+    sysutils,
     EnvironmentFactoryImpl,
     DispatcherFactoryImpl,
     RouteMatcherIntf,
     RouteCollectionFactoryImpl,
     OutputBufferFactoryImpl,
+    DebugErrorHandlerFactoryImpl,
     ErrorHandlerFactoryImpl,
     ConfigImpl,
     ConfigFactoryImpl,
@@ -36,10 +38,14 @@ uses
 
 initialization
 
-    appDependencyContainer := TDependencyContainer.create(TDependencyList.create());
-    {$INCLUDE main.dependencies.inc}
-    {$INCLUDE views.dependencies.inc}
-
+    try
+        appDependencyContainer := TDependencyContainer.create(TDependencyList.create());
+        {$INCLUDE main.dependencies.inc}
+        {$INCLUDE views.dependencies.inc}
+    except
+        appDependencyContainer := nil;
+        raise;
+    end;
 finalization
     appDependencyContainer := nil;
 end.

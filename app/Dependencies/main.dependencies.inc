@@ -1,7 +1,7 @@
 appDependencyContainer.add(
     'config',
     TFanoConfigFactory.create(
-        '../config/config.json'
+        extractFilePath(getCurrentDir()) + 'config/config.json'
     )
 );
 
@@ -23,4 +23,4 @@ appDependencyContainer.add(
 );
 appDependencyContainer.add('environment', TCGIEnvironmentFactory.create());
 appDependencyContainer.add('outputBuffer', TOutputBufferFactory.create());
-appDependencyContainer.add('errorHandler', TErrorHandlerFactory.create());
+appDependencyContainer.add('errorHandler', TDebugErrorHandlerFactory.create());
