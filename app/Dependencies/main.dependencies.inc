@@ -9,6 +9,7 @@ appDependencyContainer.add('dispatcher', TDispatcherFactory.create(appDependency
 appDependencyContainer.add('router', TRouteCollectionFactory.create(appDependencyContainer));
 appDependencyContainer.add('environment', TCGIEnvironmentFactory.create(appDependencyContainer));
 appDependencyContainer.add('outputBuffer', TOutputBufferFactory.create(appDependencyContainer));
+appDependencyContainer.add('errorHandler', TErrorHandlerFactory.create(appDependencyContainer));
 
 ///middleware list for application level
 appDependencyContainer.add('appMiddlewares', TMiddlewareCollectionAwareFactory.create(appDependencyContainer));

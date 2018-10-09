@@ -25,6 +25,7 @@ uses
     DispatcherFactoryImpl,
     RouteCollectionFactoryImpl,
     OutputBufferFactoryImpl,
+    ErrorHandlerFactoryImpl,
     ConfigImpl,
     ConfigFactoryImpl,
     DependencyListImpl,

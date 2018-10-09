@@ -12,6 +12,7 @@ uses
     MiddlewareCollectionAwareIntf,
     EnvironmentIntf,
     DispatcherIntf,
+    ErrorHandlerIntf,
 
     {------------------------------------
     Register application dependencies
@@ -36,7 +37,8 @@ begin
             appDependencyContainer.get('dispatcher') as IDispatcher,
             appDependencyContainer.get('environment') as ICGIEnvironment,
             appDependencyContainer.get('router') as IRouteCollection,
-            appDependencyContainer.get('appMiddlewares') as IMiddlewareCollectionAware
+            appDependencyContainer.get('appMiddlewares') as IMiddlewareCollectionAware,
+            appDependencyContainer.get('errorHandler') as IErrorHandler
         );
         appInstance.run();
     finally
