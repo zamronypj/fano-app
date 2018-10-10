@@ -124,8 +124,14 @@ or to change route to access, set `REQUEST_URI` variable.
 
     $ REQUEST_URI=/test/test ./simulate.run.sh
 
+This is similar to simulating browser requesting this page,for example,
+
+    $ wget -O- http://[your fano app hostname]/test/test
+
 
 ## Known Issues
+
+### Issue with GNU Linker
 
 When running `build.sh` script, you may encounter following warning:
 
@@ -137,3 +143,21 @@ This is known issue between FreePascal and GNU Linker.
 There is few workaround such as adding `-k` compiler options that will be passed to GNU Linker.
 
 However this warning is minor and can be ignored as it does not affect output executable.
+
+### Issue with unsynchronized compiled unit with unit source
+
+Sometime FreePascal can not compile your code because, for example, you deleted a
+unit source code (.pas) but old generated unit (.ppu, .o, .a files) still there. Solution is to remove those files.
+
+By default, generated compiled unit is in `bin/unit` directory.
+But do not delete `README.md` file inside this directory as it is not being ignored by git.
+
+    $ rm bin/unit/*.ppu
+    $ rm bin/unit/*.o
+    $ rm bin/unit/*.a
+
+Following shell command will remove all files inside `bin/unit` directory except
+`README.md` file.
+
+    $ find bin/unit ! -name 'README.md' -type f -exec rm -f {} +
+

@@ -1,7 +1,7 @@
 #----------------------------------------------
 # User configuration for development build
 # Please see FreePascal Documentation for available
-# compiler configurations
+# compiler switch configurations
 #----------------------------------------------
 
 #----------------------------------------------
@@ -54,6 +54,18 @@
 # include assertion code
 #----------------------------------------------
 -Sa
+
+#----------------------------------------------
+# generate assembler file
+# Turn on this if you want to analyze generated
+# assembly code
+#----------------------------------------------
+#-a
+
+#----------------------------------------------
+# generate code profiling data
+#----------------------------------------------
+-pg
 
 #----------------------------------------------
 # verbose for debugging purpose
