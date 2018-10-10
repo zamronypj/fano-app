@@ -21,6 +21,4 @@ container.add(
         container.get('router') as IRouteMatcher
     )
 );
-container.add('environment', TCGIEnvironmentFactory.create());
 container.add('outputBuffer', TOutputBufferFactory.create());
-container.add('errorHandler', TDebugErrorHandlerFactory.create());

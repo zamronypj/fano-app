@@ -17,8 +17,6 @@ type
         procedure buildDependencies(const container : IDependencyContainer); override;
         procedure buildRoutes(const container : IDependencyContainer); override;
         function initDispatcher(const container : IDependencyContainer) : IDispatcher; override;
-        function initEnvironment(const container : IDependencyContainer) : ICGIEnvironment;override;
-        function initErrorHandler(const container : IDependencyContainer) : IErrorHandler; override;
     end;
 
 implementation
@@ -86,15 +84,4 @@ uses
     begin
         result := container.get('dispatcher') as IDispatcher;
     end;
-
-    function TMyApp.initEnvironment(const container : IDependencyContainer) : ICGIEnvironment;
-    begin
-        result := container.get('environment') as ICGIEnvironment;
-    end;
-
-    function TMyApp.initErrorHandler(const container : IDependencyContainer) : IErrorHandler;
-    begin
-        result := container.get('errorHandler') as IErrorHandler;
-    end;
-
 end.

@@ -10,6 +10,8 @@ uses
     DependencyContainerIntf,
     DependencyContainerImpl,
     DependencyListImpl,
+    EnvironmentImpl,
+    DebugErrorHandlerImpl,
     myapp;
 
     {------------------------------------
@@ -21,14 +23,12 @@ uses
         container : IDependencyContainer;
     begin
         container := TDependencyContainer.create(TDependencyList.create());
-        appInstance := TMyApp.Create(container);
-        try
-            appInstance.initialize(container);
-            appInstance.run();
-        finally
-            container := nil;
-            appInstance := nil;
-        end;
+        appInstance := TMyApp.create(
+            container,
+            TCGIEnvironment.create(),
+            TDebugErrorHandler.create()
+        );
+        appInstance.run();
     end;
 
 begin
