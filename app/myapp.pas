@@ -42,7 +42,6 @@ uses
     SimpleDispatcherFactoryImpl,
     RouteCollectionFactoryImpl,
     OutputBufferFactoryImpl,
-    DebugErrorHandlerFactoryImpl,
     ErrorHandlerFactoryImpl,
     ConfigImpl,
     ConfigFactoryImpl,
