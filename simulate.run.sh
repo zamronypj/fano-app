@@ -6,8 +6,14 @@ CURRDIR=$PWD
 # app executed by web server
 cd app/public
 
-REQUEST_METHOD=GET \
-REQUEST_URI=/ \
+if [ -z "$REQUEST_METHOD" ]; then
+    export REQUEST_METHOD="GET"
+fi
+
+if [ -z "$REQUEST_URI" ]; then
+    export REQUEST_URI="/"
+fi
+
 ./app.cgi
 
 cd $CURRDIR

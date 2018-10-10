@@ -1,4 +1,4 @@
-appDependencyContainer.add(
+container.add(
     'config',
     TFanoConfigFactory.create(
         extractFilePath(getCurrentDir()) + 'config/config.json'
@@ -6,21 +6,21 @@ appDependencyContainer.add(
 );
 
 ///middleware list for application level
-appDependencyContainer.add('appMiddlewares', TMiddlewareCollectionAwareFactory.create());
+container.add('appMiddlewares', TMiddlewareCollectionAwareFactory.create());
 
 ///middleware list for each routes,
 ///need to be use factory so each route will have different middleware list
-appDependencyContainer.factory('routeMiddlewares', TMiddlewareCollectionAwareFactory.create());
+container.factory('routeMiddlewares', TMiddlewareCollectionAwareFactory.create());
 
-appDependencyContainer.add('router', TRouteCollectionFactory.create());
+container.add('router', TRouteCollectionFactory.create());
 
-appDependencyContainer.add(
+container.add(
     'dispatcher',
     TDispatcherFactory.create(
-        appDependencyContainer.get('appMiddlewares') as IMiddlewareCollectionAware,
-        appDependencyContainer.get('router') as IRouteMatcher
+        container.get('appMiddlewares') as IMiddlewareCollectionAware,
+        container.get('router') as IRouteMatcher
     )
 );
-appDependencyContainer.add('environment', TCGIEnvironmentFactory.create());
-appDependencyContainer.add('outputBuffer', TOutputBufferFactory.create());
-appDependencyContainer.add('errorHandler', TDebugErrorHandlerFactory.create());
+container.add('environment', TCGIEnvironmentFactory.create());
+container.add('outputBuffer', TOutputBufferFactory.create());
+container.add('errorHandler', TDebugErrorHandlerFactory.create());

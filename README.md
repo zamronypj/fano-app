@@ -12,7 +12,8 @@ Pascal web application framework
 ### Build
 
 Clone this repository and copy `*.cfg.sample` to `*.cfg`.
-Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg` and run `build.sh` shell script.
+Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg`
+and run `build.sh` shell script.
 
 Also copy `app/config/config.json.sample` to `app/config/config.json`.
 
@@ -108,10 +109,21 @@ Which basically tells Apache to serve existing files/directories directly. For a
 
 ### Simulate run on command line
 
+    $ cd app/public
     $ REQUEST_METHOD=GET \
       REQUEST_URI=/test/test \
       SERVER_NAME=juhara.com \
-      .app/public/app.cgi
+      ./app.cgi
+
+`simulate.run.sh` is bash script that can be used to simplify simulating run
+application in shell.
+
+    $ ./simulate.run.sh
+
+or to change route to access, set `REQUEST_URI` variable.
+
+    $ REQUEST_URI=/test/test ./simulate.run.sh
+
 
 ## Known Issues
 

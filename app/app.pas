@@ -7,23 +7,10 @@ program app;
 uses
     sysutils,
     AppIntf,
-    AppImpl,
-    ConfigIntf,
-    RouteCollectionIntf,
-    MiddlewareCollectionAwareIntf,
-    EnvironmentIntf,
-    DispatcherIntf,
-    ErrorHandlerIntf,
-
-    {------------------------------------
-    Register application dependencies
-    -------------------------------------}
-    di,
-
-    {------------------------------------
-    Register application routes
-    -------------------------------------}
-    routes;
+    DependencyContainerIntf,
+    DependencyContainerImpl,
+    DependencyListImpl,
+    myapp;
 
     {------------------------------------
     application
@@ -31,21 +18,15 @@ uses
     procedure runApp();
     var
         appInstance : IWebApplication;
-        errorHandler : IErrorHandler;
+        container : IDependencyContainer;
     begin
+        container := TDependencyContainer.create(TDependencyList.create());
+        appInstance := TMyApp.Create(container);
         try
-            errorHandler := appDependencyContainer.get('errorHandler') as IErrorHandler;
-            appInstance := TFanoWebApplication.create(
-                appDependencyContainer.get('dispatcher') as IDispatcher,
-                appDependencyContainer.get('environment') as ICGIEnvironment,
-                errorHandler
-            );
             appInstance.run();
-        except
-            on e : Exception do
-            begin
-                errorHandler.handleError(e);
-            end;
+        finally
+            appInstance := nil;
+            container := nil;
         end;
     end;
 
