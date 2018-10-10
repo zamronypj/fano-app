@@ -11,7 +11,7 @@ uses
     DependencyContainerImpl,
     DependencyListImpl,
     EnvironmentImpl,
-    DebugErrorHandlerImpl,
+    ErrorHandlerImpl,
     myapp;
 
     {------------------------------------
@@ -26,7 +26,7 @@ uses
         appInstance := TMyApp.create(
             container,
             TCGIEnvironment.create(),
-            TDebugErrorHandler.create()
+            TErrorHandler.create()
         );
         appInstance.run();
     end;
