@@ -23,10 +23,11 @@ uses
         container := TDependencyContainer.create(TDependencyList.create());
         appInstance := TMyApp.Create(container);
         try
+            appInstance.initialize(container);
             appInstance.run();
         finally
-            appInstance := nil;
             container := nil;
+            appInstance := nil;
         end;
     end;
 
