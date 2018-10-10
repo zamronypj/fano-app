@@ -39,6 +39,7 @@ uses
     ----------------------------------- *}
     EnvironmentFactoryImpl,
     DispatcherFactoryImpl,
+    SimpleDispatcherFactoryImpl,
     RouteCollectionFactoryImpl,
     OutputBufferFactoryImpl,
     DebugErrorHandlerFactoryImpl,

@@ -14,6 +14,7 @@ container.factory('routeMiddlewares', TMiddlewareCollectionAwareFactory.create()
 
 container.add('router', TRouteCollectionFactory.create());
 
+{
 container.add(
     'dispatcher',
     TDispatcherFactory.create(
@@ -21,4 +22,13 @@ container.add(
         container.get('router') as IRouteMatcher
     )
 );
+}
+
+container.add(
+    'dispatcher',
+    TSimpleDispatcherFactory.create(
+        container.get('router') as IRouteMatcher
+    )
+);
+
 container.add('outputBuffer', TOutputBufferFactory.create());
