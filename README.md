@@ -23,6 +23,12 @@ Also copy `app/config/config.json.sample` to `app/config/config.json`.
     $ cp build.cfg.sample build.cfg
     $ ./build.sh
 
+`config.setup.sh` shell script is provided to simplify copying those
+configuration files. Following shell command is similar to command above.
+
+    $ ./config.setup.sh
+    $ ./build.sh
+
 By default, it will output binary executable in `app/public` directory.
 
 ### Build for different environment

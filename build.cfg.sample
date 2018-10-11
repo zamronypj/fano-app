@@ -22,6 +22,7 @@
 
 #----------------------------------------------
 # Include configuration based on build type (default is prod)
+# using #INCLUDE directive
 # For example
 # $ BUILD_TYPE=prod ./build.sh
 #----------------------------------------------
