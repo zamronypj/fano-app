@@ -7,8 +7,8 @@
 #----------------------------------------------
 # Target OS
 # linux : Linux
-# win64 : Windows
-# freebsd : FreeBSD
+# win64 : Windows (not tested yet)
+# freebsd : FreeBSD (not tested yet)
 #----------------------------------------------
 -Tlinux
 
