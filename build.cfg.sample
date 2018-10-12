@@ -6,6 +6,9 @@
 
 #----------------------------------------------
 # Target OS
+# linux : Linux
+# win64 : Windows (not tested yet)
+# freebsd : FreeBSD (not tested yet)
 #----------------------------------------------
 -Tlinux
 
@@ -22,6 +25,7 @@
 
 #----------------------------------------------
 # Include configuration based on build type (default is prod)
+# using #INCLUDE directive
 # For example
 # $ BUILD_TYPE=prod ./build.sh
 #----------------------------------------------

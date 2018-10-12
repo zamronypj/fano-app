@@ -23,6 +23,12 @@ Also copy `app/config/config.json.sample` to `app/config/config.json`.
     $ cp build.cfg.sample build.cfg
     $ ./build.sh
 
+`config.setup.sh` shell script is provided to simplify copying those
+configuration files. Following shell command is similar to command above.
+
+    $ ./config.setup.sh
+    $ ./build.sh
+
 By default, it will output binary executable in `app/public` directory.
 
 ### Build for different environment
@@ -86,9 +92,10 @@ For example on Apache,
      </Directory>
 </VirtualHost>
 ```
-On Apache, you will need to enable CGI module, such as `mod_cgi`. If CGI module not loaded, above virtual host will cause `app.cgi` is downloaded instead of executed.
+On Apache, you will need to enable CGI module, such as `mod_cgi` or `mod_cgid`. If CGI module not loaded, above virtual host will cause `app.cgi` is downloaded instead of executed.
 
 For example, on Debian, this will enable `mod_cgi` module.
+
 ```
 $ sudo a2enmod cgi
 $ sudo systemctl restart apache2
@@ -109,11 +116,13 @@ Which basically tells Apache to serve existing files/directories directly. For a
 
 ### Simulate run on command line
 
-    $ cd app/public
-    $ REQUEST_METHOD=GET \
-      REQUEST_URI=/test/test \
-      SERVER_NAME=juhara.com \
-      ./app.cgi
+```
+$ cd app/public
+$ REQUEST_METHOD=GET \
+  REQUEST_URI=/test/test \
+  SERVER_NAME=juhara.com \
+  ./app.cgi
+```
 
 `simulate.run.sh` is bash script that can be used to simplify simulating run
 application in shell.
@@ -152,12 +161,13 @@ unit source code (.pas) but old generated unit (.ppu, .o, .a files) still there.
 By default, generated compiled unit is in `bin/unit` directory.
 But do not delete `README.md` file inside this directory as it is not being ignored by git.
 
-    $ rm bin/unit/*.ppu
-    $ rm bin/unit/*.o
-    $ rm bin/unit/*.a
+```
+$ rm bin/unit/*.ppu
+$ rm bin/unit/*.o
+$ rm bin/unit/*.a
+```
 
 Following shell command will remove all files inside `bin/unit` directory except
 `README.md` file.
 
     $ find bin/unit ! -name 'README.md' -type f -exec rm -f {} +
-
