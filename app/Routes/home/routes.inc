@@ -2,7 +2,7 @@ router.get(
     '/',
     THelloController.create(
         routeMiddlewares.getBeforeMiddlewares(),
-        routeMiddlewares.getBeforeMiddlewares(),
+        routeMiddlewares.getAfterMiddlewares(),
         TTemplateFileView.create(
             container.get('outputBuffer') as IOutputBuffer,
             container.get('templateParser') as ITemplateParser,
