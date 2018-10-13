@@ -56,13 +56,6 @@
 -Sa
 
 #----------------------------------------------
-# generate assembler file
-# Turn on this if you want to analyze generated
-# assembly code
-#----------------------------------------------
-#-a
-
-#----------------------------------------------
 # generate code profiling data
 #----------------------------------------------
 -pg

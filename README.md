@@ -164,6 +164,7 @@ But do not delete `README.md` file inside this directory as it is not being igno
 ```
 $ rm bin/unit/*.ppu
 $ rm bin/unit/*.o
+$ rm bin/unit/*.rsj
 $ rm bin/unit/*.a
 ```
 
