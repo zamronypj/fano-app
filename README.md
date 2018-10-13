@@ -137,6 +137,8 @@ This is similar to simulating browser requesting this page,for example,
 
     $ wget -O- http://[your fano app hostname]/test/test
 
+However, running using `simulate.run.sh` allows you to view output of heaptrc
+unit for detecting memory leak (if you enable `-gh` switch in `build.dev.cfg`).
 
 ## Known Issues
 
