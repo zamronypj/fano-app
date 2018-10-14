@@ -23,7 +23,7 @@ type
      *
      * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *}
-    TFcgiWebApplication = class(TInterfacedObject, IWebApplication)
+    TFcgiWebApplication = class(TInterfacedObject, IWebApplication, IRunnable)
     private
         cgiApp : IWebApplication;
         fastCgiEnv : IFCGIEnvironment;
