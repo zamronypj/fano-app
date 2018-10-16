@@ -29,6 +29,7 @@ uses
     ----------------------------------- *}
     RouteMatcherIntf,
     RouteCollectionIntf,
+    RouteHandlerIntf,
     MiddlewareCollectionAwareIntf,
     ConfigIntf,
     OutputBufferIntf,
@@ -52,31 +53,26 @@ uses
     ViewParametersImpl,
 
     {*! -------------------------------
-        controllers
+        controllers factory
     ----------------------------------- *}
-    HelloController;
+    HelloControllerFactory;
 
 
     procedure TMyApp.buildDependencies(const container : IDependencyContainer);
     begin
         {$INCLUDE Dependencies/main.dependencies.inc}
         {$INCLUDE Dependencies/views.dependencies.inc}
+        {$INCLUDE Dependencies/controllers.dependencies.inc}
     end;
 
     procedure TMyApp.buildRoutes(const container : IDependencyContainer);
     var router : IRouteCollection;
-        routeMiddlewares : IMiddlewareCollectionAware;
-        config : IAppConfiguration;
     begin
         router := container.get('router') as IRouteCollection;
-        routeMiddlewares := container.get('routeMiddlewares') as IMiddlewareCollectionAware;
-        config := container.get('config') as IAppConfiguration;
         try
             {$INCLUDE Routes/home/routes.inc}
         finally
             router := nil;
-            routeMiddlewares := nil;
-            config := nil;
         end;
     end;
 

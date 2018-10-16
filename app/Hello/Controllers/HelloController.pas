@@ -3,13 +3,15 @@ unit HelloController;
 interface
 
 uses
+
+    DependencyIntf,
     ResponseIntf,
     RequestIntf,
     ControllerImpl;
 
 type
 
-    THelloController = class(TController)
+    THelloController = class(TController, IDependency)
     public
         function handleRequest(
               const request : IRequest;
