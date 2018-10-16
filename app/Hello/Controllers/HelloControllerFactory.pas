@@ -14,6 +14,7 @@ type
     private
         container : IDependencyContainer;
     public
+
         constructor create(const containerInst : IDependencyContainer);
         destructor destroy(); override;
         function build() : IDependency; override;
@@ -41,6 +42,9 @@ uses
 
     constructor THelloControllerFactory.create(const containerInst : IDependencyContainer);
     begin
+        //we hold global container instance.
+        //This cause memory leak if after build we do not set it to nil
+        //TODO: need to fix this
         container := containerInst;
     end;
 
@@ -73,6 +77,10 @@ uses
         finally
             routeMiddlewares := nil;
             config := nil;
+            //TODO: here we need to set to nil to avoid memory leak
+            //TODO: if build() called multiple times for example when called
+            //TODO: with container.factory(). This will cause  access violation
+            container := nil;
         end;
     end;
 
