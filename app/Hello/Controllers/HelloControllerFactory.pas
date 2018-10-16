@@ -5,20 +5,13 @@ interface
 uses
     DependencyContainerIntf,
     DependencyIntf,
-    DependencyFactoryIntf,
     FactoryImpl;
 
 type
 
     THelloControllerFactory = class(TFactory, IDependencyFactory)
-    private
-        container : IDependencyContainer;
     public
-
-        constructor create(const containerInst : IDependencyContainer);
-        destructor destroy(); override;
-        function build() : IDependency; override;
-        procedure cleanUp(); override;
+        function build(const container : IDependencyContainer) : IDependency; override;
     end;
 
 implementation
@@ -41,18 +34,7 @@ uses
     TemplateFileViewImpl,
     ViewParametersImpl;
 
-    constructor THelloControllerFactory.create(const containerInst : IDependencyContainer);
-    begin
-        container := containerInst;
-    end;
-
-    destructor THelloControllerFactory.destroy();
-    begin
-        inherited destroy();
-        cleanUp();
-    end;
-
-    function THelloControllerFactory.build() : IDependency;
+    function THelloControllerFactory.build(const container : IDependencyContainer) : IDependency;
     var routeMiddlewares : IMiddlewareCollectionAware;
         config : IAppConfiguration;
     begin
@@ -75,14 +57,6 @@ uses
         finally
             routeMiddlewares := nil;
             config := nil;
-            cleanUp();
         end;
     end;
-
-    procedure THelloControllerFactory.cleanUp();
-    begin
-        //release our reference to container to avoid memory leak
-        container := nil;
-    end;
-
 end.

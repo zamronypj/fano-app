@@ -1,1 +1,1 @@
-container.add('helloController', THelloControllerFactory.create(container));
+container.add('helloController', THelloControllerFactory.create());
