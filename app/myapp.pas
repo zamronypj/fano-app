@@ -49,6 +49,7 @@ uses
     ConfigFactoryImpl,
     DependencyListImpl,
     MiddlewareCollectionAwareFactoryImpl,
+    NullMiddlewareCollectionAwareFactoryImpl,
     TemplateParserFactoryImpl,
     TemplateFileViewImpl,
     ViewParametersImpl,
