@@ -1,3 +1,6 @@
+{-----------------------------------------------
+  register application configuration
+------------------------------------------------}
 container.add(
     'config',
     TFanoConfigFactory.create(
@@ -5,30 +8,18 @@ container.add(
     )
 );
 
-///middleware list for application level
-container.add('appMiddlewares', TMiddlewareCollectionAwareFactory.create());
+{-----------------------------------------------
+  register application simple router instance
+  which does not support middleware
+------------------------------------------------}
+container.add('router', TSimpleRouteCollectionFactory.create());
 
-///middleware list for each routes,
-///need to be use factory so each route will have different middleware list
-container.factory('routeMiddlewares', TMiddlewareCollectionAwareFactory.create());
-
-container.add('router', TRouteCollectionFactory.create());
-
-{
-container.add(
-    'dispatcher',
-    TDispatcherFactory.create(
-        container.get('appMiddlewares') as IMiddlewareCollectionAware,
-        container.get('router') as IRouteMatcher
-    )
-);
-}
-
+{-----------------------------------------------
+  setup application request dispatcher
+------------------------------------------------}
 container.add(
     'dispatcher',
     TSimpleDispatcherFactory.create(
         container.get('router') as IRouteMatcher
     )
 );
-
-container.add('outputBuffer', TOutputBufferFactory.create());

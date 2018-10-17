@@ -42,6 +42,7 @@ uses
     DispatcherFactoryImpl,
     SimpleDispatcherFactoryImpl,
     RouteCollectionFactoryImpl,
+    SimpleRouteCollectionFactoryImpl,
     OutputBufferFactoryImpl,
     ErrorHandlerFactoryImpl,
     ConfigImpl,
@@ -60,9 +61,7 @@ uses
 
     procedure TMyApp.buildDependencies(const container : IDependencyContainer);
     begin
-        {$INCLUDE Dependencies/main.dependencies.inc}
-        {$INCLUDE Dependencies/views.dependencies.inc}
-        {$INCLUDE Dependencies/controllers.dependencies.inc}
+        {$INCLUDE Dependencies/dependencies.inc}
     end;
 
     procedure TMyApp.buildRoutes(const container : IDependencyContainer);
