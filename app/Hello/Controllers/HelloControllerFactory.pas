@@ -42,8 +42,8 @@ uses
         config := container.get('config') as IAppConfiguration;
         try
             result := THelloController.create(
-                routeMiddlewares.getBeforeMiddlewares(),
-                routeMiddlewares.getAfterMiddlewares(),
+                routeMiddlewares.getBefore(),
+                routeMiddlewares.getAfter(),
                 TTemplateFileView.create(
                     container.get('outputBuffer') as IOutputBuffer,
                     container.get('templateParser') as ITemplateParser,
