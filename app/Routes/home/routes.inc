@@ -1,3 +1,7 @@
 router.get('/tet/{tess}/{ss}', container.get('helloController') as IRouteHandler);
 router.get('/stet/stet/{tes}', container.get('helloController') as IRouteHandler);
+router.get('/a/stet/{tes}', container.get('helloController') as IRouteHandler);
+router.get('/b/stet/{tes}', container.get('helloController') as IRouteHandler);
+router.get('/c/stet/{tes}', container.get('helloController') as IRouteHandler);
+router.get('/d/stet/{tes}', container.get('helloController') as IRouteHandler);
 router.get('/hello/{name}', container.get('helloController') as IRouteHandler);
