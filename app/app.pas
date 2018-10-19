@@ -12,6 +12,7 @@ uses
     DependencyListImpl,
     EnvironmentImpl,
     ErrorHandlerImpl,
+    DebugAppImpl,
     myapp;
 
     {------------------------------------
@@ -23,11 +24,11 @@ uses
         container : IDependencyContainer;
     begin
         container := TDependencyContainer.create(TDependencyList.create());
-        appInstance := TMyApp.create(
+        appInstance := TDebugWebApplication.create(TMyApp.create(
             container,
             TCGIEnvironment.create(),
             TErrorHandler.create()
-        );
+        ));
         appInstance.run();
     end;
 
