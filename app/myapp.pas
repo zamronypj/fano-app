@@ -52,7 +52,7 @@ uses
     NullMiddlewareCollectionAwareFactoryImpl,
     TemplateParserFactoryImpl,
     TemplateFileViewImpl,
-    ViewParametersImpl,
+    ViewParametersFactoryImpl,
 
     {*! -------------------------------
         controllers factory
