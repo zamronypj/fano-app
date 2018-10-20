@@ -20,7 +20,7 @@ container.factory('routeMiddlewares', TNullMiddlewareCollectionAwareFactory.crea
   register application simple router instance
   which does not support middleware
 ------------------------------------------------}
-container.add('router', TSimpleRouteCollectionFactory.create());
+container.add('router', TCombineRouteCollectionFactory.create());
 
 {-----------------------------------------------
   setup application request dispatcher

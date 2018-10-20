@@ -41,8 +41,11 @@ uses
     EnvironmentFactoryImpl,
     DispatcherFactoryImpl,
     SimpleDispatcherFactoryImpl,
+
     RouteCollectionFactoryImpl,
     SimpleRouteCollectionFactoryImpl,
+    CombineRouteCollectionFactoryImpl,
+
     OutputBufferFactoryImpl,
     ErrorHandlerFactoryImpl,
     ConfigImpl,
