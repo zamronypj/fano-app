@@ -34,10 +34,10 @@ Also copy `app/config/config.json.sample` to `app/config/config.json`.
     $ cp build.cfg.sample build.cfg
     $ ./build.sh
 
-`config.setup.sh` shell script is provided to simplify copying those
+`tools/config.setup.sh` shell script is provided to simplify copying those
 configuration files. Following shell command is similar to command above.
 
-    $ ./config.setup.sh
+    $ ./tools/config.setup.sh
     $ ./build.sh
 
 By default, it will output binary executable in `app/public` directory.
@@ -128,10 +128,10 @@ $ REQUEST_METHOD=GET \
   ./app.cgi
 ```
 
-`simulate.run.sh` is bash script that can be used to simplify simulating run
+`tools/simulate.run.sh` is bash script that can be used to simplify simulating run
 application in shell.
 
-    $ ./simulate.run.sh
+    $ ./tools/simulate.run.sh
 
 or to change route to access, set `REQUEST_URI` variable.
 
@@ -141,7 +141,7 @@ This is similar to simulating browser requesting this page,for example,
 
     $ wget -O- http://[your fano app hostname]/test/test
 
-However, running using `simulate.run.sh` allows you to view output of heaptrc
+However, running using `tools/simulate.run.sh` allows you to view output of heaptrc
 unit for detecting memory leak (if you enable `-gh` switch in `build.dev.cfg`).
 
 ## Known Issues
@@ -179,4 +179,4 @@ Following shell command will remove all files inside `bin/unit` directory except
 
     $ find bin/unit ! -name 'README.md' -type f -exec rm -f {} +
 
-`clear.compiled.units.sh` script is provided to simplify this task.
+`tools/clear.compiled.units.sh` script is provided to simplify this task.
