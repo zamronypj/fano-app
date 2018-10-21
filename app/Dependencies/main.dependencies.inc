@@ -4,7 +4,7 @@
 container.add(
     'config',
     TFanoConfigFactory.create(
-        extractFilePath(getCurrentDir()) + 'config/config.json'
+        extractFileDir(getCurrentDir()) + '/config/config.json'
     )
 );
 

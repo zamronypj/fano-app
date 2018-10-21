@@ -49,7 +49,7 @@ uses
                 TTemplateFileView.create(
                     container.get('outputBuffer') as IOutputBuffer,
                     container.get('templateParser') as ITemplateParser,
-                    extractFilePath(getCurrentDir()) + '/Templates/Hello/index.html'
+                    extractFileDir(getCurrentDir()) + '/Templates/Hello/index.html'
                 ),
                 viewParams
                     .setVar('baseUrl', config.getString('baseUrl'))
