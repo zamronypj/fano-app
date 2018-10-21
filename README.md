@@ -60,13 +60,6 @@ Build process will use compiler configuration defined in `fano/fpc.cfg`, `build.
 
 If `BUILD_TYPE` environment variable is not set, production environment will be assumed.
 
-## Change Fano Web Framework Directory
-
-By default, Fano web framework units reside in `fano` directory. If you choose
-to move it to different location, you can set `FANO_DIR` environment variable
-
-    $ FANO_DIR=/path/to/fano ./build.sh
-
 ## Change executable output directory
 
 Compilation will output executable to directory defined in `EXEC_OUTPUT_DIR`
