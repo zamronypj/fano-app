@@ -1,6 +1,6 @@
-# Fano Web Framework
+# Fano Web Framework Skeleton Application
 
-Pascal web application framework
+Skeleton web application using Fano, Pascal web application framework
 
 ## Requirement
 
@@ -21,7 +21,6 @@ Clone this repository
 If you missing `--recursive` when you clone, you may find that `fano` directory is empty. In this case run
 
     $ git submodule update --init
-
 
 Copy `*.cfg.sample` to `*.cfg`.
 Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg`
