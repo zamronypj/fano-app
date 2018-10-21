@@ -6,12 +6,24 @@ Pascal web application framework
 
 - [FreePascal](https://www.freepascal.org/) >= 3.0
 - Web Server (Apache, nginx)
+- [Fano](https://github.com/zamronypj/fano)
 
 ## Installation
 
 ### Build
 
-Clone this repository and copy `*.cfg.sample` to `*.cfg`.
+Clone this repository
+
+    $ git clone git@github.com:zamronypj/fano-app.git --recursive
+
+`--recursive` is needed so git also pull [Fano](https://github.com/zamronypj/fano) repository.
+
+If you missing `--recursive` when you clone, you may find that `fano` directory is empty. In this case run
+
+    $ git submodule update --init
+
+
+Copy `*.cfg.sample` to `*.cfg`.
 Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg`
 and run `build.sh` shell script.
 
