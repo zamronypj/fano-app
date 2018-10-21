@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export FANO_DIR="fano"
+
 if [[ -z "${BUILD_TYPE}" ]]; then
 export BUILD_TYPE="prod"
 fi
