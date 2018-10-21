@@ -72,7 +72,7 @@ environment variable. By default is `app/public` directory.
 Compilation will use executable filename as defined in `EXEC_OUTPUT_NAME`
 environment variable. By default is `app.cgi` filename.
 
-    $ EXEC_OUTPUT_NAME=server.cgi ./build.sh
+    $ EXEC_OUTPUT_NAME=index.cgi ./build.sh
 
 ## Run
 
