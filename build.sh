@@ -28,4 +28,4 @@ if [[ -z "${SOURCE_PROGRAM_NAME}" ]]; then
 SOURCE_PROGRAM_NAME="app.pas"
 fi
 
-fpc @fpc.cfg @build.cfg ${USER_APP_DIR}/${SOURCE_PROGRAM_NAME}
+fpc @fano/fpc.cfg @build.cfg ${USER_APP_DIR}/${SOURCE_PROGRAM_NAME}

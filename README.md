@@ -50,13 +50,13 @@ To build for different environment, set `BUILD_TYPE` environment variable.
 
     $ BUILD_TYPE=prod ./build.sh
 
-Build process will use compiler configuration defined in `fpc.cfg`, `build.cfg` and `build.prod.cfg`.
+Build process will use compiler configuration defined in `fano/fpc.cfg`, `build.cfg` and `build.prod.cfg`.
 
 #### Build for development environment
 
     $ BUILD_TYPE=dev ./build.sh
 
-Build process will use compiler configuration defined in `fpc.cfg`, `build.cfg` and `build.dev.cfg`.
+Build process will use compiler configuration defined in `fano/fpc.cfg`, `build.cfg` and `build.dev.cfg`.
 
 If `BUILD_TYPE` environment variable is not set, production environment will be assumed.
 
