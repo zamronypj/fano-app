@@ -39,8 +39,9 @@ type
         ) : TArrayOfPlaceholders;
 
         function getPlaceholderValuesFromUri(
-             const matches : TRegexMatchResult;
-             const placeHolders : TArrayOfPlaceholders
+            const matchIndex : integer;
+            const matches : TRegexMatchResult;
+            const placeHolders : TArrayOfPlaceholders
         ) : TArrayOfPlaceholders;
 
         procedure clearRoutes();
@@ -236,15 +237,16 @@ const
      *
      *---------------------------------------------------*)
     function TCombineRegexRouteList.getPlaceholderValuesFromUri(
-         const matches : TRegexMatchResult;
-         const placeHolders : TArrayOfPlaceholders
+        const matchIndex : integer;
+        const matches : TRegexMatchResult;
+        const placeHolders : TArrayOfPlaceholders
     ) : TArrayOfPlaceholders;
-    var i, totalValue, totalPlaceHolders : longint;
+    var i,j, totalValue, totalPlaceHolders : integer;
     begin
         totalPlaceHolders := length(placeholders);
-        //matches.matches will always contain 1 element
-        //totalValue will contain number of placeholder+1 (full match)
-        totalValue := length(matches.matches[0])-1;
+        totalValue := length(matches.matches[0]);
+            for j:=0 to length(matches.matches[0])-1 do
+            writeln(matchIndex, ',',j, '--', matches.matches[0][j]);
 
         if (totalPlaceHolders <> totalValue) then
         begin
@@ -279,11 +281,11 @@ const
           matches.matches[0][n]
           where n=1..length(matches.matches)-1
          ----------------------------*)
-        for i:=0 to totalPlaceholders-1 do
+        for i:=0 to totalValue-1 do
         begin
             //placeholders[i].phName already contain variable name
             //so our concern only to fill its value
-            placeholders[i].phValue := matches.matches[0][i+1];
+            placeholders[i].phValue := matches.matches[i][1];
         end;
         result := placeHolders;
     end;
@@ -480,6 +482,7 @@ const
      *---------------------------------------------------*)
     function TCombineRegexRouteList.findMatchedRoute(const matchResult : TRegexMatchResult) : PRouteRec;
     var i, j, len, len2 : integer;
+        routeRec : PRouteRec;
     begin
         result := nil;
         len := length(matchResult.matches);
@@ -490,12 +493,17 @@ const
             begin
                 if ((j>0) and (length(matchResult.matches[i][j]) > 0)) then
                 begin
-                    result := findRouteByMatchIndex(j);
-                    result^.placeholders := getPlaceholderValuesFromUri(
-                        matchResult,
-                        result^.placeHolders
-                    );
-                    exit;
+                    routeRec := findRouteByMatchIndex(j);
+                    if (routeRec <> nil) then
+                    begin
+                        routeRec^.placeholders := getPlaceholderValuesFromUri(
+                            j,
+                            matchResult,
+                            routeRec^.placeholders
+                        );
+                        result := routeRec;
+                        exit;
+                    end;
                 end
             end;
         end;
