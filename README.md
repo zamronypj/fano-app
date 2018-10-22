@@ -12,6 +12,12 @@ Web application skeleton using Fano, Pascal web application framework
 
 ### Build
 
+Make sure `FreePascal` is installed. Run
+
+    $ fpc -i
+
+If you see something like `Free Pascal Compiler version 3.0.4`,  you are good to go.
+
 Clone this repository
 
     $ git clone git@github.com:zamronypj/fano-app.git --recursive
