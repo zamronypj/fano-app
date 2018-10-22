@@ -22,6 +22,12 @@ If you missing `--recursive` when you clone, you may find that `fano` directory 
 
     $ git submodule update --init
 
+To update fano to its latest commit, run
+
+    $ git checkout master && git submodule foreach --recursive git pull origin master
+
+Above command will checkout to `master` branch of this repository and pull latest update from `master` branch of [Fano](https://github.com/zamronypj/fano) repository.
+
 Copy `*.cfg.sample` to `*.cfg`.
 Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg`
 and run `build.sh` shell script.
