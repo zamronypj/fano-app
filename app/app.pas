@@ -1,7 +1,10 @@
-{-----------------------------------------------
- Bootstrap application
- @author Zamrony P. Juhara <zamronypj@yahoo.com>
-------------------------------------------------}
+(*!------------------------------------------------------------
+ * Fano Web Framework Skeleton Application (https://fano.juhara.id)
+ *
+ * @link      https://github.com/zamronypj/fano-app
+ * @copyright Copyright (c) 2018 Zamrony P. Juhara
+ * @license   https://github.com/zamronypj/fano-app/blob/master/LICENSE (GPL 2.0)
+ *------------------------------------------------------------- *)
 program app;
 
 uses
@@ -15,9 +18,10 @@ uses
     DebugAppImpl,
     myapp;
 
-    {------------------------------------
-    application
-    -------------------------------------}
+    {-----------------------------------------------
+     Bootstrap application
+     @author Zamrony P. Juhara <zamronypj@yahoo.com>
+    ------------------------------------------------}
     procedure runApp();
     var
         appInstance : IWebApplication;
