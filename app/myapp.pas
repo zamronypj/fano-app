@@ -64,6 +64,8 @@ uses
     TemplateFileViewImpl,
     ViewParametersFactoryImpl,
 
+    NullLoggerImpl,
+
     {*! -------------------------------
         controllers factory
     ----------------------------------- *}
