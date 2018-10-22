@@ -17,6 +17,16 @@ container.add(
 );
 
 {-----------------------------------------------
+  register application logger
+------------------------------------------------}
+container.add(
+    'logger',
+     TFileLoggerFactory.create(
+         (container.get('config') as IAppConfiguration).getString('logFile')
+    )
+);
+
+{-----------------------------------------------
   register middleware list for each routes that
   does nothing,
   need to be use factory so each route will have

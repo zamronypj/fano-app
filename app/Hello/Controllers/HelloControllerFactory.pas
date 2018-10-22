@@ -39,16 +39,19 @@ uses
     HelloController,
     TemplateParserFactoryImpl,
     TemplateFileViewImpl,
-    ViewParametersIntf;
+    ViewParametersIntf,
+    LoggerIntf;
 
     function THelloControllerFactory.build(const container : IDependencyContainer) : IDependency;
     var routeMiddlewares : IMiddlewareCollectionAware;
         config : IAppConfiguration;
         viewParams : IViewParameters;
+        logger : ILogger;
     begin
         routeMiddlewares := container.get('routeMiddlewares') as IMiddlewareCollectionAware;
         config := container.get('config') as IAppConfiguration;
         viewParams := container.get('viewParams') as IViewParameters;
+        logger := container.get('logger') as ILogger;
         try
             result := THelloController.create(
                 routeMiddlewares.getBefore(),
@@ -61,12 +64,14 @@ uses
                 viewParams
                     .setVar('baseUrl', config.getString('baseUrl'))
                     .setVar('name', 'Fano')
-                    .setVar('appName', config.getString('appName'))
+                    .setVar('appName', config.getString('appName')),
+                logger
             );
         finally
             routeMiddlewares := nil;
             config := nil;
             viewParams := nil;
+            logger := nil;
         end;
     end;
 end.
