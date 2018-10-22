@@ -6,7 +6,7 @@ Web application skeleton using Fano, Pascal web application framework
 
 - [FreePascal](https://www.freepascal.org/) >= 3.0
 - Web Server (Apache, nginx)
-- [Fano](https://github.com/zamronypj/fano)
+- [Fano Web Framework](https://github.com/zamronypj/fano)
 
 ## Installation
 
