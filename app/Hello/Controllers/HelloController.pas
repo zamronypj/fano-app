@@ -14,7 +14,6 @@ uses
     DependencyIntf,
     RequestIntf,
     ResponseIntf,
-    LoggerIntf,
     MiddlewareCollectionIntf,
     ViewIntf,
     ViewParametersIntf,
@@ -23,18 +22,7 @@ uses
 type
 
     THelloController = class(TController, IDependency)
-    private
-        logger : ILogger;
     public
-        constructor create(
-            const beforeMiddlewares : IMiddlewareCollection;
-            const afterMiddlewares : IMiddlewareCollection;
-            const viewInst : IView;
-            const viewParamsInst : IViewParameters;
-            const loggerInst : ILogger
-        );
-        destructor destroy(); override;
-
         function handleRequest(
             const request : IRequest;
             const response : IResponse
@@ -47,27 +35,6 @@ uses
 
     PlaceholderTypes;
 
-    constructor THelloController.create(
-        const beforeMiddlewares : IMiddlewareCollection;
-        const afterMiddlewares : IMiddlewareCollection;
-        const viewInst : IView;
-        const viewParamsInst : IViewParameters;
-        const loggerInst : ILogger
-    );
-    begin
-        inherited create(
-            beforeMiddlewares,
-            afterMiddlewares,
-            viewInst,
-            viewParamsInst
-        );
-        logger := loggerInst;
-    end;
-    destructor THelloController.destroy();
-    begin
-        logger:= nil;
-    end;
-
     function THelloController.handleRequest(
           const request : IRequest;
           const response : IResponse
@@ -75,7 +42,6 @@ uses
     var placeHolders : TArrayOfPlaceholders;
         i:integer;
     begin
-        logger.info('handle request');
         placeHolders := getArgs();
         for i:=0 to length(placeholders)-1 do
         begin
