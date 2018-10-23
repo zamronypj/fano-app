@@ -8,7 +8,7 @@
 #!/bin/bash
 
 #------------------------------------------------------
-# Build scrip for Linux
+# Build script for Linux
 #------------------------------------------------------
 
 export FANO_DIR="fano"
