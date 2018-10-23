@@ -192,3 +192,7 @@ Following shell command will remove all files inside `bin/unit` directory except
     $ find bin/unit ! -name 'README.md' -type f -exec rm -f {} +
 
 `tools/clear.compiled.units.sh` script is provided to simplify this task.
+
+### Windows user
+
+FreePascal supports Windows as target operating system, however, this repository is not yet tested on Windows and helper shell scripts are for bash shell.
