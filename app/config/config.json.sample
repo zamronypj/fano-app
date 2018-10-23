@@ -1,5 +1,4 @@
 {
     "appName" : "Fano Web Framework",
-    "baseUrl" : "https://fano.juhara.id",
-    "logFile" : "../storages/logs/app.log"
+    "baseUrl" : "https://fano.juhara.id"
 }
