@@ -55,8 +55,8 @@ uses
 
     OutputBufferFactoryImpl,
     ErrorHandlerFactoryImpl,
-    ConfigImpl,
-    ConfigFactoryImpl,
+    JsonFileConfigImpl,
+    JsonFileConfigFactoryImpl,
     DependencyListImpl,
     MiddlewareCollectionAwareFactoryImpl,
     NullMiddlewareCollectionAwareFactoryImpl,
