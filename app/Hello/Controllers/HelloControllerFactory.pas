@@ -60,7 +60,6 @@ uses
             extractFileDir(getCurrentDir()) + '/Templates/Hello/index.html'
         );
         try
-            try
             result := THelloController.create(
                 routeMiddlewares.getBefore(),
                 routeMiddlewares.getAfter(),
@@ -71,10 +70,6 @@ uses
                     .setVar('appName', config.getString('appName')),
                 logger
             );
-            except
-                result :=nil;
-                raise;
-            end;
         finally
             routeMiddlewares := nil;
             config := nil;
