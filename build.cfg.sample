@@ -13,6 +13,13 @@
 -Tlinux
 
 #----------------------------------------------
+# Output Windows console application
+#
+# Uncomment if target OS is Windows
+#----------------------------------------------
+#-WC
+
+#----------------------------------------------
 # Target CPU
 # x86_64 : Intel 64-bit architecture (default)
 # i386 : Intel 32-bit architecture
