@@ -15,7 +15,6 @@ uses
     DependencyListImpl,
     EnvironmentImpl,
     ErrorHandlerImpl,
-    DebugAppImpl,
     myapp;
 
     (*!-----------------------------------------------
