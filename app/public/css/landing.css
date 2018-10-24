@@ -13,3 +13,7 @@ html,body {
 .hero-head h1 {
     font-size: 2.0em;
 }
+
+.hero.is-info.error {
+    background-color: #f3440b;
+}

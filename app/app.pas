@@ -15,6 +15,7 @@ uses
     DependencyListImpl,
     EnvironmentImpl,
     ErrorHandlerImpl,
+    TemplateErrorHandlerImpl,
     myapp;
 
     (*!-----------------------------------------------
@@ -31,7 +32,7 @@ uses
         appInstance := TMyApp.create(
             container,
             TCGIEnvironment.create(),
-            TErrorHandler.create()
+            TTemplateErrorHandler.create(extractFileDir(getCurrentDir()) + '/Templates/Error/500.html')
         );
         appInstance.run();
     end;
