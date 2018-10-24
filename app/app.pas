@@ -18,21 +18,22 @@ uses
     DebugAppImpl,
     myapp;
 
-    {-----------------------------------------------
-     Bootstrap application
-     @author Zamrony P. Juhara <zamronypj@yahoo.com>
-    ------------------------------------------------}
+    (*!-----------------------------------------------
+     * Bootstrap application
+     *
+     * @author Zamrony P. Juhara <zamronypj@yahoo.com>
+     *------------------------------------------------*)
     procedure runApp();
     var
         appInstance : IWebApplication;
         container : IDependencyContainer;
     begin
         container := TDependencyContainer.create(TDependencyList.create());
-        appInstance := TDebugWebApplication.create(TMyApp.create(
+        appInstance := TMyApp.create(
             container,
             TCGIEnvironment.create(),
             TErrorHandler.create()
-        ));
+        );
         appInstance.run();
     end;
 

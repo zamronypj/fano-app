@@ -10,3 +10,4 @@ build.prod.cfg
 bin/*
 !bin/README.md
 !bin/unit/README.md
+fp.dir
