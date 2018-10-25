@@ -62,6 +62,7 @@ uses
     MiddlewareCollectionAwareFactoryImpl,
     NullMiddlewareCollectionAwareFactoryImpl,
     TemplateParserFactoryImpl,
+    SimpleTemplateParserFactoryImpl,
     TemplateFileViewImpl,
     ViewParametersFactoryImpl,
 

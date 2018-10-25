@@ -19,7 +19,7 @@ container.add('outputBuffer', TOutputBufferFactory.create());
 {-----------------------------------------------
   setup html template parser
 ------------------------------------------------}
-container.add('templateParser', TTemplateParserFactory.create());
+container.add('templateParser', TSimpleTemplateParserFactory.create());
 
 {-----------------------------------------------
   setup global view parameters
