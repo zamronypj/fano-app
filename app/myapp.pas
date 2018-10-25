@@ -53,6 +53,7 @@ uses
     SimpleRouteCollectionFactoryImpl,
     CombineRouteCollectionFactoryImpl,
 
+    HeadersFactoryImpl,
     OutputBufferFactoryImpl,
     ErrorHandlerFactoryImpl,
     JsonFileConfigImpl,

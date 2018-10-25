@@ -35,6 +35,7 @@ uses
     ConfigIntf,
     OutputBufferIntf,
     TemplateParserIntf,
+    HeadersIntf,
 
     HelloController,
     TemplateParserFactoryImpl,
@@ -52,6 +53,7 @@ uses
         config := container.get('config') as IAppConfiguration;
         viewParams := container.get('viewParams') as IViewParameters;
         tmplView := TTemplateFileView.create(
+            container.get('headers') as IHeaders,
             container.get('outputBuffer') as IOutputBuffer,
             container.get('templateParser') as ITemplateParser,
             extractFileDir(getCurrentDir()) + '/Templates/Hello/index.html'

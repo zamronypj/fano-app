@@ -7,6 +7,11 @@
  *------------------------------------------------------------- *)
 
 {-----------------------------------------------
+   setup headers instance
+ ------------------------------------------------}
+container.add('headers', THeadersFactory.create());
+
+{-----------------------------------------------
   setup output buffer instance
 ------------------------------------------------}
 container.add('outputBuffer', TOutputBufferFactory.create());
