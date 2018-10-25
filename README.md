@@ -12,7 +12,7 @@ Web application skeleton using Fano, Pascal web application framework
 
 ### Build
 
-Make sure [FreePascal](https://www.freepascal.org/) is installed. Run
+Make sure [Free Pascal](https://www.freepascal.org/) is installed. Run
 
     $ fpc -i
 
