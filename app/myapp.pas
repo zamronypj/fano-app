@@ -68,7 +68,8 @@ uses
     {*! -------------------------------
         controllers factory
     ----------------------------------- *}
-    HelloControllerFactory;
+    HelloControllerFactory,
+    HelloJsonControllerFactory;
 
 
     procedure TMyApp.buildDependencies(const container : IDependencyContainer);
