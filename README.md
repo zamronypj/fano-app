@@ -166,8 +166,8 @@ When running `build.sh` script, you may encounter following warning:
 /usr/bin/ld: warning: app/public/link.res contains output sections; did you forget -T?
 ```
 
-This is known issue between FreePascal and GNU Linker.
-There is few workaround such as adding `-k` compiler options that will be passed to GNU Linker.
+This is known issue between FreePascal and GNU Linker. See
+[FAQ: link.res syntax error, or "did you forget -T?"](https://www.freepascal.org/faq.var#unix-ld219)
 
 However this warning is minor and can be ignored as it does not affect output executable.
 
