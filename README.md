@@ -4,7 +4,7 @@ Web application skeleton using Fano, Pascal web application framework
 
 ## Requirement
 
-- [FreePascal](https://www.freepascal.org/) >= 3.0
+- [Free Pascal](https://www.freepascal.org/) >= 3.0
 - Web Server (Apache, nginx)
 - [Fano Web Framework](https://github.com/zamronypj/fano)
 
@@ -12,7 +12,7 @@ Web application skeleton using Fano, Pascal web application framework
 
 ### Build
 
-Make sure [FreePascal](https://www.freepascal.org/) is installed. Run
+Make sure [Free Pascal](https://www.freepascal.org/) is installed. Run
 
     $ fpc -i
 
@@ -166,8 +166,8 @@ When running `build.sh` script, you may encounter following warning:
 /usr/bin/ld: warning: app/public/link.res contains output sections; did you forget -T?
 ```
 
-This is known issue between FreePascal and GNU Linker.
-There is few workaround such as adding `-k` compiler options that will be passed to GNU Linker.
+This is known issue between FreePascal and GNU Linker. See
+[FAQ: link.res syntax error, or "did you forget -T?"](https://www.freepascal.org/faq.var#unix-ld219)
 
 However this warning is minor and can be ignored as it does not affect output executable.
 
