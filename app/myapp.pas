@@ -70,7 +70,8 @@ uses
         controllers factory
     ----------------------------------- *}
     HelloControllerFactory,
-    HelloJsonControllerFactory;
+    HelloJsonControllerFactory,
+    HiControllerFactory;
 
 
     procedure TMyApp.buildDependencies(const container : IDependencyContainer);
@@ -83,7 +84,7 @@ uses
     begin
         router := container.get('router') as IRouteCollection;
         try
-            {$INCLUDE Routes/home/routes.inc}
+            {$INCLUDE Routes/routes.inc}
         finally
             router := nil;
         end;

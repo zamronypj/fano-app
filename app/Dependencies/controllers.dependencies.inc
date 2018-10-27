@@ -17,3 +17,9 @@ container.add('helloController', THelloControllerFactory.create());
   dependency container
 ------------------------------------------------}
 container.add('helloJsonController', THelloJsonControllerFactory.create());
+
+{-----------------------------------------------
+  register HiController inside
+  dependency container
+------------------------------------------------}
+container.add('hiController', THiControllerFactory.create());
