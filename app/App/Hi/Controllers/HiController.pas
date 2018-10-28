@@ -39,7 +39,6 @@ uses
     var strName : string;
     begin
         strName := request.getParsedBodyParam('name');
-        strName := request.getParsedBodyParam('name');
         result := TJsonResponse.create(response.headers(), '{"name":"'+ strName +'"}');
     end;
 
