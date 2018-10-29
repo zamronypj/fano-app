@@ -3,6 +3,6 @@
  *
  * @link      https://github.com/zamronypj/fano-app
  * @copyright Copyright (c) 2018 Zamrony P. Juhara
- * @license   https://github.com/zamronypj/fano-app/blob/master/LICENSE (GPL 2.0)
+ * @license   https://github.com/zamronypj/fano-app/blob/master/LICENSE (GPL 3.0)
  *------------------------------------------------------------- *)
 router.post('/hi/{name}', container.get('hiController') as IRouteHandler);
