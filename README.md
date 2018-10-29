@@ -156,6 +156,16 @@ This is similar to simulating browser requesting this page,for example,
 However, running using `tools/simulate.run.sh` allows you to view output of heaptrc
 unit for detecting memory leak (if you enable `-gh` switch in `build.dev.cfg`).
 
+
+## Deployment
+
+You need to deploy only executable binary and any suporting files such as HTML templates, images, css stylesheets, application config.
+Any `pas` or `inc` files or shell scripts is not needed in deployment machine in order application to run.
+
+So for this repository, you will need to copy `public`, `Templates`, `config`
+and `storages` directories to your deployment machine. make sure that
+`storages` directory is writable by web server.
+
 ## Known Issues
 
 ### Issue with GNU Linker
