@@ -8,13 +8,8 @@
 program app;
 
 uses
-    sysutils,
-    AppIntf,
-    DependencyContainerIntf,
-    DependencyContainerImpl,
-    DependencyListImpl,
-    EnvironmentImpl,
-    ErrorHandlerImpl,
+
+    fano,
     myapp;
 
     (*!-----------------------------------------------

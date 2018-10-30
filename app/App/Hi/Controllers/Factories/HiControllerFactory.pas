@@ -10,9 +10,7 @@ unit HiControllerFactory;
 interface
 
 uses
-    DependencyContainerIntf,
-    DependencyIntf,
-    FactoryImpl;
+    fano;
 
 type
 
@@ -29,7 +27,6 @@ uses
     {*! -------------------------------
         unit interfaces
     ----------------------------------- *}
-    MiddlewareCollectionAwareIntf,
     HiController;
 
     function THiControllerFactory.build(const container : IDependencyContainer) : IDependency;

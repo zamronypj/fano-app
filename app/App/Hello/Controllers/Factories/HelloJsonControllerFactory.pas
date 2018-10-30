@@ -10,9 +10,7 @@ unit HelloJsonControllerFactory;
 interface
 
 uses
-    DependencyContainerIntf,
-    DependencyIntf,
-    FactoryImpl;
+    fano;
 
 type
 
@@ -29,7 +27,6 @@ uses
     {*! -------------------------------
         unit interfaces
     ----------------------------------- *}
-    MiddlewareCollectionAwareIntf,
     HelloJsonController;
 
     function THelloJsonControllerFactory.build(const container : IDependencyContainer) : IDependency;
