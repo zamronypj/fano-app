@@ -153,7 +153,7 @@ This is similar to simulating browser requesting this page,for example,
 
     $ wget -O- http://[your fano app hostname]/test/test
 
-However, running using `tools/simulate.run.sh` allows you to view output of heaptrc
+However, running using `tools/simulate.run.sh` allows you to view output of `heaptrc`
 unit for detecting memory leak (if you enable `-gh` switch in `build.dev.cfg`).
 
 
@@ -205,4 +205,4 @@ Following shell command will remove all files inside `bin/unit` directory except
 
 ### Windows user
 
-FreePascal supports Windows as target operating system, however, this repository is not yet tested on Windows and helper shell scripts are for bash shell.
+FreePascal supports Windows as target operating system, however, this repository is not yet tested on Windows.
