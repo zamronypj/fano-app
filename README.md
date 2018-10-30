@@ -38,7 +38,7 @@ Copy `*.cfg.sample` to `*.cfg`.
 Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg`
 and run `build.sh` shell script.
 
-These `*.cfg` files contains some Free Pascal compiler switches that you can turn on/off to change how executable is compiled and generated. For complete
+These `*.cfg` files contain some Free Pascal compiler switches that you can turn on/off to change how executable is compiled and generated. For complete
 explanation on available compiler switches, coonsult Free Pascal documentation.
 
 Also copy `app/config/config.json.sample` to `app/config/config.json`.
