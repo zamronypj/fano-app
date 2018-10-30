@@ -28,7 +28,7 @@ If you missing `--recursive` when you clone, you may find that `fano` directory 
 
     $ git submodule update --init
 
-To update fano to its latest commit, run
+To update Fano to its latest commit, run
 
     $ git checkout master && git submodule foreach --recursive git pull origin master
 
@@ -37,6 +37,9 @@ Above command will checkout to `master` branch of this repository and pull lates
 Copy `*.cfg.sample` to `*.cfg`.
 Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg`
 and run `build.sh` shell script.
+
+These `*.cfg` files contain some Free Pascal compiler switches that you can turn on/off to change how executable is compiled and generated. For complete
+explanation on available compiler switches, coonsult Free Pascal documentation.
 
 Also copy `app/config/config.json.sample` to `app/config/config.json`.
 
@@ -153,7 +156,7 @@ This is similar to simulating browser requesting this page,for example,
 
     $ wget -O- http://[your fano app hostname]/test/test
 
-However, running using `tools/simulate.run.sh` allows you to view output of heaptrc
+However, running using `tools/simulate.run.sh` allows you to view output of `heaptrc`
 unit for detecting memory leak (if you enable `-gh` switch in `build.dev.cfg`).
 
 
@@ -205,4 +208,10 @@ Following shell command will remove all files inside `bin/unit` directory except
 
 ### Windows user
 
-FreePascal supports Windows as target operating system, however, this repository is not yet tested on Windows and helper shell scripts are for bash shell.
+Free Pascal supports Windows as target operating system, however, this repository is not yet tested on Windows. To target Windows, in `build.cfg` replace
+compiler switch `-Tlinux` with `-Twin64` and uncomment line `#-WC` to
+become `-WC`.
+
+### Lazarus user
+
+While you can use Lazarus IDE, it is not mandatory tool. Any text editor for code editing (Atom, Visual Studio Code, Sublime, Vim etc) should suffice.

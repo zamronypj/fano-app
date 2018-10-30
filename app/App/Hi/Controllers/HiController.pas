@@ -11,10 +11,7 @@ interface
 
 uses
 
-    DependencyIntf,
-    RequestIntf,
-    ResponseIntf,
-    RouteHandlerImpl;
+    fano;
 
 type
 

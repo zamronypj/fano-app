@@ -10,12 +10,8 @@ unit myapp;
 interface
 
 uses
-    DependencyContainerIntf,
-    RunnableIntf,
-    DispatcherIntf,
-    EnvironmentIntf,
-    ErrorHandlerIntf,
-    AppImpl;
+
+    fano;
 
 type
 
@@ -30,41 +26,6 @@ implementation
 
 uses
     sysutils,
-
-    {*! -------------------------------
-        unit interfaces
-    ----------------------------------- *}
-    RouteMatcherIntf,
-    RouteCollectionIntf,
-    RouteHandlerIntf,
-    MiddlewareCollectionAwareIntf,
-    ConfigIntf,
-    OutputBufferIntf,
-    TemplateParserIntf,
-
-    {*! -------------------------------
-        unit implementations
-    ----------------------------------- *}
-    EnvironmentFactoryImpl,
-    DispatcherFactoryImpl,
-    SimpleDispatcherFactoryImpl,
-
-    RouteCollectionFactoryImpl,
-    SimpleRouteCollectionFactoryImpl,
-    CombineRouteCollectionFactoryImpl,
-
-    HeadersFactoryImpl,
-    OutputBufferFactoryImpl,
-    ErrorHandlerFactoryImpl,
-    JsonFileConfigImpl,
-    JsonFileConfigFactoryImpl,
-    DependencyListImpl,
-    MiddlewareCollectionAwareFactoryImpl,
-    NullMiddlewareCollectionAwareFactoryImpl,
-    TemplateParserFactoryImpl,
-    SimpleTemplateParserFactoryImpl,
-    TemplateFileViewImpl,
-    ViewParametersFactoryImpl,
 
     {*! -------------------------------
         controllers factory

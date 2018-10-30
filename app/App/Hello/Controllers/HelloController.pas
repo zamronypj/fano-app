@@ -11,13 +11,7 @@ interface
 
 uses
 
-    DependencyIntf,
-    RequestIntf,
-    ResponseIntf,
-    MiddlewareCollectionIntf,
-    ViewIntf,
-    ViewParametersIntf,
-    ControllerImpl;
+    fano;
 
 type
 
@@ -30,10 +24,6 @@ type
     end;
 
 implementation
-
-uses
-
-    PlaceholderTypes;
 
     function THelloController.handleRequest(
           const request : IRequest;

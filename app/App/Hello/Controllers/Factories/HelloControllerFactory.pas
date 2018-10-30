@@ -10,9 +10,7 @@ unit HelloControllerFactory;
 interface
 
 uses
-    DependencyContainerIntf,
-    DependencyIntf,
-    FactoryImpl;
+    fano;
 
 type
 
@@ -26,22 +24,7 @@ implementation
 uses
     sysutils,
 
-    {*! -------------------------------
-        unit interfaces
-    ----------------------------------- *}
-    RouteMatcherIntf,
-    RouteCollectionIntf,
-    MiddlewareCollectionAwareIntf,
-    ConfigIntf,
-    OutputBufferIntf,
-    TemplateParserIntf,
-    HeadersIntf,
-
-    HelloController,
-    TemplateParserFactoryImpl,
-    TemplateFileViewImpl,
-    ViewParametersIntf,
-    ViewIntf;
+    HelloController;
 
     function THelloControllerFactory.build(const container : IDependencyContainer) : IDependency;
     var routeMiddlewares : IMiddlewareCollectionAware;
