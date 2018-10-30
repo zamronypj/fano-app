@@ -28,7 +28,7 @@ If you missing `--recursive` when you clone, you may find that `fano` directory 
 
     $ git submodule update --init
 
-To update fano to its latest commit, run
+To update Fano to its latest commit, run
 
     $ git checkout master && git submodule foreach --recursive git pull origin master
 
@@ -208,6 +208,10 @@ Following shell command will remove all files inside `bin/unit` directory except
 
 ### Windows user
 
-FreePascal supports Windows as target operating system, however, this repository is not yet tested on Windows. To target Windows, in `build.cfg` replace
+Free Pascal supports Windows as target operating system, however, this repository is not yet tested on Windows. To target Windows, in `build.cfg` replace
 compiler switch `-Tlinux` with `-Twin64` and uncomment line `#-WC` to
 become `-WC`.
+
+### Lazarus user
+
+While you can use Lazarus IDE, it is not mandatory tool. Any text editor for code editing (Atom, Visual Studio Code, Sublime, Vim etc) will suffice.
