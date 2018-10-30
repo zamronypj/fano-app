@@ -38,6 +38,9 @@ Copy `*.cfg.sample` to `*.cfg`.
 Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg`
 and run `build.sh` shell script.
 
+These `*.cfg` files contains some Free Pascal compiler switches that you can turn on/off to change how executable is compiled and generated. For complete
+explanation on available compiler switches, coonsult Free Pascal documentation.
+
 Also copy `app/config/config.json.sample` to `app/config/config.json`.
 
     $ cp app/config/config.json.sample app/config/config.json
@@ -205,4 +208,6 @@ Following shell command will remove all files inside `bin/unit` directory except
 
 ### Windows user
 
-FreePascal supports Windows as target operating system, however, this repository is not yet tested on Windows.
+FreePascal supports Windows as target operating system, however, this repository is not yet tested on Windows. To target Windows, in `build.cfg` replace
+compiler switch `-Tlinux` with `-Twin64` and uncomment line `#-WC` to
+become `-WC`.
