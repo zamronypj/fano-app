@@ -42,7 +42,7 @@ These `*.cfg` files contain some Free Pascal compiler switches that you can turn
 explanation on available compiler switches, consult Free Pascal documentation.
 
 Also copy `app/config/config.json.sample` to `app/config/config.json` and edit
-configuration as needed.
+configuration as needed. For example, you may need to change `baseUrl` to match your own base url so JavaScript or CSS stylesheets point to correct URL.
 
     $ cp app/config/config.json.sample app/config/config.json
     $ cp build.prod.cfg.sample build.prod.cfg
