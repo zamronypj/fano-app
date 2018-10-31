@@ -41,7 +41,8 @@ and run `build.sh` shell script (if you are on Windows, then `build.cmd`).
 These `*.cfg` files contain some Free Pascal compiler switches that you can turn on/off to change how executable is compiled and generated. For complete
 explanation on available compiler switches, consult Free Pascal documentation.
 
-Also copy `app/config/config.json.sample` to `app/config/config.json`.
+Also copy `app/config/config.json.sample` to `app/config/config.json` and edit
+configuration as needed.
 
     $ cp app/config/config.json.sample app/config/config.json
     $ cp build.prod.cfg.sample build.prod.cfg
