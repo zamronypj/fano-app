@@ -24,7 +24,7 @@ Clone this repository
 
 `--recursive` is needed so git also pull [Fano](https://github.com/zamronypj/fano) repository.
 
-If you missing `--recursive` when you clone, you may find that `fano` directory is empty. In this case run
+If you are missing `--recursive` when you clone, you may find that `fano` directory is empty. In this case run
 
     $ git submodule update --init
 
@@ -36,7 +36,7 @@ Above command will checkout to `master` branch of this repository and pull lates
 
 Copy `*.cfg.sample` to `*.cfg`.
 Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg`
-and run `build.sh` shell script.
+and run `build.sh` shell script (if you are on Windows, then `build.cmd`).
 
 These `*.cfg` files contain some Free Pascal compiler switches that you can turn on/off to change how executable is compiled and generated. For complete
 explanation on available compiler switches, consult Free Pascal documentation.
