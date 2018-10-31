@@ -12,20 +12,15 @@ uses
     fano,
     myapp;
 
+begin
     (*!-----------------------------------------------
      * Bootstrap application
      *
      * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *------------------------------------------------*)
-    procedure runApp();
-    begin
-        (TMyApp.create(
-            TDependencyContainer.create(TDependencyList.create()),
-            TCGIEnvironment.create(),
-            TErrorHandler.create()
-        )).run();
-    end;
-
-begin
-    runApp();
+    (TMyApp.create(
+        TDependencyContainer.create(TDependencyList.create()),
+        TCGIEnvironment.create(),
+        TErrorHandler.create()
+    )).run();
 end.
