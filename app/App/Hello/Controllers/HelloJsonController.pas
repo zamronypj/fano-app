@@ -15,6 +15,14 @@ uses
 
 type
 
+    (*!-----------------------------------------------
+     * controller that handle route :
+     * /hello/{name}/json (GET)
+     *
+     * See Routes/Hello/routes.inc
+     *
+     * @author Zamrony P. Juhara <zamronypj@yahoo.com>
+     *------------------------------------------------*)
     THelloJsonController = class(TRouteHandler, IDependency)
     public
         function handleRequest(
@@ -31,6 +39,13 @@ implementation
     ) : IResponse;
     var placeholder : TPlaceholder;
     begin
+        (*!------------------------------------
+         * get single route argument
+         * for route pattern /hello/{name}/json
+         * and actual url /hello/John/json
+         * placeHolder will contains
+         * { phName : 'name', phValue : 'John'}
+         *--------------------------------------*)
         placeholder := getArg('name');
         result := TJsonResponse.create(response.headers(), '{"'+ placeholder.phName +'":"'+ placeholder.phValue +'"}');
     end;
