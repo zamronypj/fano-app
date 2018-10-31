@@ -20,11 +20,9 @@ uses
     procedure runApp();
     var
         appInstance : IWebApplication;
-        container : IDependencyContainer;
     begin
-        container := TDependencyContainer.create(TDependencyList.create());
         appInstance := TMyApp.create(
-            container,
+            TDependencyContainer.create(TDependencyList.create()),
             TCGIEnvironment.create(),
             TErrorHandler.create()
         );
