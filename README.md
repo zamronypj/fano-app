@@ -162,7 +162,7 @@ unit for detecting memory leak (if you enable `-gh` switch in `build.dev.cfg`).
 
 ## Deployment
 
-You need to deploy only executable binary and any suporting files such as HTML templates, images, css stylesheets, application config.
+You need to deploy only executable binary and any supporting files such as HTML templates, images, css stylesheets, application config.
 Any `pas` or `inc` files or shell scripts is not needed in deployment machine in order application to run.
 
 So for this repository, you will need to copy `public`, `Templates`, `config`
