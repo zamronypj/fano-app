@@ -12,15 +12,19 @@ uses
     fano,
     myapp;
 
+(*!-----------------------------------------------
+ * Bootstrap application
+ *
+ * @author Zamrony P. Juhara <zamronypj@yahoo.com>
+ *------------------------------------------------*)
+var
+    appInstance : IWebApplication;
+
 begin
-    (*!-----------------------------------------------
-     * Bootstrap application
-     *
-     * @author Zamrony P. Juhara <zamronypj@yahoo.com>
-     *------------------------------------------------*)
-    (TMyApp.create(
+    appInstance := TMyApp.create(
         TDependencyContainer.create(TDependencyList.create()),
         TCGIEnvironment.create(),
         TErrorHandler.create()
-    )).run();
+    );
+    appInstance.run();
 end.
