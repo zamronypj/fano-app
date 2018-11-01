@@ -131,8 +131,9 @@ Depending on your server setup, for example, if  you use `.htaccess`, add follow
     RewriteRule ^(.*)$ app.cgi [L]
 </IfModule>
 ```
+and put `.htaccess` file in same directory as `app.cgi` file (i.e., in `app/public` directory).
 
-Which basically tells Apache to serve existing files/directories directly. For any non-existing files/directories, pass them to our application.
+Content of `.htaccess` basically tells Apache to serve existing files/directories directly. For any non-existing files/directories, pass them to our application.
 
 ### Simulate run on command line
 
@@ -183,15 +184,16 @@ When running `build.sh` script, you may encounter following warning:
 This is known issue between FreePascal and GNU Linker. See
 [FAQ: link.res syntax error, or "did you forget -T?"](https://www.freepascal.org/faq.var#unix-ld219)
 
-However this warning is minor and can be ignored as it does not affect output executable.
+However, this warning is minor and can be ignored. It does not affect output executable.
 
 ### Issue with unsynchronized compiled unit with unit source
 
 Sometime FreePascal can not compile your code because, for example, you deleted a
-unit source code (.pas) but old generated unit (.ppu, .o, .a files) still there. Solution is to remove those files.
+unit source code (.pas) but old generated unit (.ppu, .o, .a files) still there
+or when you switch between git branches. Solution is to remove those files.
 
-By default, generated compiled unit is in `bin/unit` directory.
-But do not delete `README.md` file inside this directory as it is not being ignored by git.
+By default, generated compiled units are in `bin/unit` directory.
+But do not delete `README.md` file inside this directory, as it is not being ignored by git.
 
 ```
 $ rm bin/unit/*.ppu

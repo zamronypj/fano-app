@@ -15,6 +15,14 @@ uses
 
 type
 
+    (*!-----------------------------------------------
+     * controller that handle route :
+     * /hi/{name} (POST)
+     *
+     * See Routes/Hi/routes.inc
+     *
+     * @author Zamrony P. Juhara <zamronypj@yahoo.com>
+     *------------------------------------------------*)
     THiController = class(TRouteHandler, IDependency)
     public
         function handleRequest(
@@ -25,16 +33,20 @@ type
 
 implementation
 
-uses
-
-    JsonResponseImpl;
-
     function THiController.handleRequest(
           const request : IRequest;
           const response : IResponse
     ) : IResponse;
     var strName : string;
     begin
+        (*!------------------------------------
+         * get single data sent from POST
+         * for route pattern /hi/{name}
+         * and actual url /hi/John
+         * and POST data
+         * name=Joko&lastName=Widowo
+         * strName will contain string 'Joko'
+         *--------------------------------------*)
         strName := request.getParsedBodyParam('name');
         result := TJsonResponse.create(response.headers(), '{"name":"'+ strName +'"}');
     end;
