@@ -66,7 +66,7 @@ To build for different environment, set `BUILD_TYPE` environment variable.
 
     $ BUILD_TYPE=prod ./build.sh
 
-Build process will use compiler configuration defined in `fano/fano.cfg`, `build.cfg` and `build.prod.cfg`. By default, `build.prod.cfg` contains some compiler switches that will aggresively optimize executable both in speed and size.
+Build process will use compiler configuration defined in `fano/fano.cfg`, `build.cfg` and `build.prod.cfg`. By default, `build.prod.cfg` contains some compiler switches that will aggressively optimize executable both in speed and size.
 
 #### Build for development environment
 
