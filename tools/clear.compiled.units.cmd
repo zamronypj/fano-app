@@ -1,9 +1,9 @@
 REM------------------------------------------------------------
-REM Fano Web Framework Skeleton Application (https://fano.juhara.id)
+REM Fano Web Framework Skeleton Application (https://fanoframework.github.io)
 REM
-REM @link      https://github.com/zamronypj/fano-app
+REM @link      https://github.com/fanoframework/fano-app
 REM @copyright Copyright (c) 2018 Zamrony P. Juhara
-REM @license   https://github.com/zamronypj/fano-app/blob/master/LICENSE (GPL 3.0)
+REM @license   https://github.com/fanoframework/fano-app/blob/master/LICENSE (GPL 3.0)
 REM-------------------------------------------------------------
 REM!/bin/bash
 
