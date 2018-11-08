@@ -50,7 +50,7 @@ bin/unit/*
 #----------------------------------------------
 # Do not ignore README.md
 # This file is provided so Git can create
-# app/storages/logs directory when this repository
+# bin/unit directory when this repository
 # is cloned.
 #----------------------------------------------
 !bin/README.md
