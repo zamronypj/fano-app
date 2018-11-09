@@ -1,4 +1,4 @@
-# Fano Web Framework Skeleton Application
+# Fano Framework Web Application Skeleton
 
 Web application skeleton using Fano, Pascal web application framework
 
