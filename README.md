@@ -20,7 +20,7 @@ If you see something like `Free Pascal Compiler version 3.0.4`,  you are good to
 
 Clone this repository
 
-    $ git clone git@github.com:zamronypj/fano-app.git --recursive
+    $ git clone git@github.com:fanoframework/fano-app.git --recursive
 
 `--recursive` is needed so git also pull [Fano](https://github.com/fanoframework/fano) repository.
 
@@ -207,7 +207,7 @@ Following shell command will remove all files inside `bin/unit` directory except
 
     $ find bin/unit ! -name 'README.md' -type f -exec rm -f {} +
 
-`tools/clear.compiled.units.sh` script is provided to simplify this task.
+`tools/clean.sh` script is provided to simplify this task.
 
 ### Windows user
 
