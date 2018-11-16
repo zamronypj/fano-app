@@ -56,7 +56,7 @@ configuration files. Following shell command is similar to command above.
     $ ./tools/config.setup.sh
     $ ./build.sh
 
-By default, it will output binary executable in `app/public` directory.
+By default, it will output binary executable in `public` directory.
 
 ### Build for different environment
 
@@ -79,7 +79,7 @@ If `BUILD_TYPE` environment variable is not set, production environment will be 
 ## Change executable output directory
 
 Compilation will output executable to directory defined in `EXEC_OUTPUT_DIR`
-environment variable. By default is `app/public` directory.
+environment variable. By default is `public` directory.
 
     $ EXEC_OUTPUT_DIR=/path/to/public/dir ./build.sh
 
@@ -100,10 +100,10 @@ For example on Apache,
 
 ```
 <VirtualHost *:80>
-     ServerName www.example.com
-     DocumentRoot /home/example/app/public
+     ServerName fano.dev
+     DocumentRoot /home/fanodev/public
 
-     <Directory "/home/example/app/public">
+     <Directory "/home/fanodev/public">
          Options +ExecCGI
          AllowOverride FileInfo
          Require all granted
@@ -178,7 +178,7 @@ and `storages` directories to your deployment machine. make sure that
 When running `build.sh` script, you may encounter following warning:
 
 ```
-/usr/bin/ld: warning: app/public/link.res contains output sections; did you forget -T?
+/usr/bin/ld: warning: public/link.res contains output sections; did you forget -T?
 ```
 
 This is known issue between FreePascal and GNU Linker. See
