@@ -39,7 +39,7 @@ uses
             container.get('headers') as IHeaders,
             container.get('outputBuffer') as IOutputBuffer,
             container.get('templateParser') as ITemplateParser,
-            extractFileDir(getCurrentDir()) + '/Templates/Hello/index.html'
+            extractFileDir(getCurrentDir()) + '/app/Templates/Hello/index.html'
         );
         try
             result := THelloController.create(
