@@ -124,6 +124,8 @@ $ sudo systemctl restart apache2
 Depending on your server setup, for example, if  you use `.htaccess`, add following code:
 
 ```
+DirectoryIndex app.cgi
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-d
