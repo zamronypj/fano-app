@@ -3,7 +3,7 @@ DirectoryIndex app.cgi
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # redirect http to https
+    # redirect http to https, uncomment following two lines if you already have SSL certificate setup
     # RewriteCond %{HTTPS} off
     # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
