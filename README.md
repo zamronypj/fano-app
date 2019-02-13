@@ -1,6 +1,6 @@
 # Fano Framework Web Application Skeleton
 
-Web application skeleton using Fano, Pascal web application framework
+Web application skeleton using Fano Framework, Pascal web application framework. [View live example.](https://fano.juhara.id)
 
 ## Requirement
 
@@ -124,6 +124,8 @@ $ sudo systemctl restart apache2
 Depending on your server setup, for example, if  you use `.htaccess`, add following code:
 
 ```
+DirectoryIndex app.cgi
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-d
