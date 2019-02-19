@@ -7,19 +7,14 @@
  *------------------------------------------------------------- *)
 
 {-----------------------------------------------
-   setup headers instance
- ------------------------------------------------}
-container.add('headers', THeadersFactory.create());
-
-{-----------------------------------------------
-  setup output buffer instance
-------------------------------------------------}
-container.add('outputBuffer', TOutputBufferFactory.create());
-
-{-----------------------------------------------
   setup html template parser
 ------------------------------------------------}
 container.add('templateParser', TSimpleTemplateParserFactory.create());
+
+{-----------------------------------------------
+  setup file reader
+------------------------------------------------}
+container.add('fileReader', TStringFileReaderFactory.create());
 
 {-----------------------------------------------
   setup global view parameters

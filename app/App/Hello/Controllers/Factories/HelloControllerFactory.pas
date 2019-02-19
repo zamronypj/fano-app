@@ -35,11 +35,10 @@ uses
         routeMiddlewares := container.get('routeMiddlewares') as IMiddlewareCollectionAware;
         config := container.get('config') as IAppConfiguration;
         viewParams := container.get('viewParams') as IViewParameters;
-        tmplView := TTemplateFileView.create(
-            container.get('headers') as IHeaders,
-            container.get('outputBuffer') as IOutputBuffer,
+        tmplView := TTemplateView.create(
+            extractFileDir(getCurrentDir()) + '/app/Templates/Hello/index.html',
             container.get('templateParser') as ITemplateParser,
-            extractFileDir(getCurrentDir()) + '/app/Templates/Hello/index.html'
+            container.get('fileReader') as IFileReader
         );
         try
             result := THelloController.create(
