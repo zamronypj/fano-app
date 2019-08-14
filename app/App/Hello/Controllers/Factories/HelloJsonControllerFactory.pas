@@ -34,10 +34,7 @@ uses
     begin
         routeMiddlewares := container.get('routeMiddlewares') as IMiddlewareCollectionAware;
         try
-            result := THelloJsonController.create(
-                routeMiddlewares.getBefore(),
-                routeMiddlewares.getAfter()
-            );
+            result := THelloJsonController.create(routeMiddlewares);
         finally
             routeMiddlewares := nil;
         end;

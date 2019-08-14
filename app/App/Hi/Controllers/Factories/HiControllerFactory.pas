@@ -34,10 +34,7 @@ uses
     begin
         routeMiddlewares := container.get('routeMiddlewares') as IMiddlewareCollectionAware;
         try
-            result := THiController.create(
-                routeMiddlewares.getBefore(),
-                routeMiddlewares.getAfter()
-            );
+            result := THiController.create(routeMiddlewares);
         finally
             routeMiddlewares := nil;
         end;

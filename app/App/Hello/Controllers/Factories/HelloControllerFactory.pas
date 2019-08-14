@@ -42,8 +42,7 @@ uses
         );
         try
             result := THelloController.create(
-                routeMiddlewares.getBefore(),
-                routeMiddlewares.getAfter(),
+                routeMiddlewares,
                 tmplView,
                 viewParams
                     .setVar('baseUrl', config.getString('baseUrl'))
