@@ -30,13 +30,7 @@ uses
     HelloJsonController;
 
     function THelloJsonControllerFactory.build(const container : IDependencyContainer) : IDependency;
-    var routeMiddlewares : IMiddlewareCollectionAware;
     begin
-        routeMiddlewares := container.get('routeMiddlewares') as IMiddlewareCollectionAware;
-        try
-            result := THelloJsonController.create(routeMiddlewares);
-        finally
-            routeMiddlewares := nil;
-        end;
+        result := THelloJsonController.create();
     end;
 end.

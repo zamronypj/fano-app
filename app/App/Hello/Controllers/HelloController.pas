@@ -25,19 +25,21 @@ type
      *
      * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *------------------------------------------------*)
-    THelloController = class(TController, IDependency)
+    THelloController = class(TController)
     public
         function handleRequest(
             const request : IRequest;
-            const response : IResponse
+            const response : IResponse;
+            const args : IRouteArgsReader
         ) : IResponse; override;
     end;
 
 implementation
 
     function THelloController.handleRequest(
-          const request : IRequest;
-          const response : IResponse
+        const request : IRequest;
+        const response : IResponse;
+        const args : IRouteArgsReader
     ) : IResponse;
     var placeHolders : TArrayOfPlaceholders;
         i:integer;
@@ -48,17 +50,17 @@ implementation
          * and actual url /hello/John/Doe/is/nice
          * placeHolders will contains array of
          * [
-         *    { phName: 'firstName', phValue : 'John'}
-         *    { phName: 'lastName', phValue : 'Doe'}
+         *    { name: 'firstName', value : 'John'}
+         *    { name: 'lastName', value : 'Doe'}
          * ]
          *--------------------------------------*)
-        placeHolders := getArgs();
+        placeHolders := args.getArgs();
 
         for i:=0 to length(placeholders)-1 do
         begin
-            viewParams.setVar(placeholders[i].phName, placeholders[i].phValue);
+            viewParams.setVar(placeholders[i].name, placeholders[i].value);
         end;
-        result := inherited handleRequest(request, response);
+        result := inherited handleRequest(request, response, args);
     end;
 
 end.

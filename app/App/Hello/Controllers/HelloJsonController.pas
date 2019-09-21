@@ -23,19 +23,21 @@ type
      *
      * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *------------------------------------------------*)
-    THelloJsonController = class(TRouteHandler, IDependency)
+    THelloJsonController = class(TAbstractController)
     public
         function handleRequest(
             const request : IRequest;
-            const response : IResponse
+            const response : IResponse;
+            const args : IRouteArgsReader
         ) : IResponse; override;
     end;
 
 implementation
 
     function THelloJsonController.handleRequest(
-          const request : IRequest;
-          const response : IResponse
+        const request : IRequest;
+        const response : IResponse;
+        const args : IRouteArgsReader
     ) : IResponse;
     var placeholder : TPlaceholder;
     begin
@@ -46,8 +48,8 @@ implementation
          * placeHolder will contains
          * { phName : 'name', phValue : 'John'}
          *--------------------------------------*)
-        placeholder := getArg('name');
-        result := TJsonResponse.create(response.headers(), '{"'+ placeholder.phName +'":"'+ placeholder.phValue +'"}');
+        placeholder := args.getArg('name');
+        result := TJsonResponse.create(response.headers(), '{"'+ placeholder.name +'":"'+ placeholder.value +'"}');
     end;
 
 end.

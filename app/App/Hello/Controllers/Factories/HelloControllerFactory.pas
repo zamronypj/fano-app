@@ -27,12 +27,10 @@ uses
     HelloController;
 
     function THelloControllerFactory.build(const container : IDependencyContainer) : IDependency;
-    var routeMiddlewares : IMiddlewareCollectionAware;
-        config : IAppConfiguration;
+    var config : IAppConfiguration;
         viewParams : IViewParameters;
         tmplView : IView;
     begin
-        routeMiddlewares := container.get('routeMiddlewares') as IMiddlewareCollectionAware;
         config := container.get('config') as IAppConfiguration;
         viewParams := container.get('viewParams') as IViewParameters;
         tmplView := TTemplateView.create(
@@ -42,7 +40,6 @@ uses
         );
         try
             result := THelloController.create(
-                routeMiddlewares,
                 tmplView,
                 viewParams
                     .setVar('baseUrl', config.getString('baseUrl'))
@@ -50,7 +47,6 @@ uses
                     .setVar('appName', config.getString('appName'))
             );
         finally
-            routeMiddlewares := nil;
             config := nil;
             viewParams := nil;
             tmplView := nil;

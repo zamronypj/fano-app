@@ -30,13 +30,7 @@ uses
     HiController;
 
     function THiControllerFactory.build(const container : IDependencyContainer) : IDependency;
-    var routeMiddlewares : IMiddlewareCollectionAware;
     begin
-        routeMiddlewares := container.get('routeMiddlewares') as IMiddlewareCollectionAware;
-        try
-            result := THiController.create(routeMiddlewares);
-        finally
-            routeMiddlewares := nil;
-        end;
+        result := THiController.create();
     end;
 end.
