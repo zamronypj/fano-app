@@ -15,3 +15,10 @@ container.add(
         extractFileDir(getCurrentDir()) + '/app/config/config.json'
     )
 );
+
+// container.add(
+//     'config',
+//     TIniFileConfigFactory.create(
+//         extractFileDir(getCurrentDir()) + '/app/config/config.ini'
+//     )
+// );

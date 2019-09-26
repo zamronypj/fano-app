@@ -10,6 +10,7 @@
 # Ignore any application configuration
 #----------------------------------------------
 app/config/config.json
+app/config/config.ini
 
 #----------------------------------------------
 # Ignore Apache any configuration
