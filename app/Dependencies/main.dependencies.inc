@@ -16,6 +16,7 @@ container.add(
     )
 );
 
+//Uncomment this if you want to use INI file config instead
 // container.add(
 //     'config',
 //     TIniFileConfigFactory.create(
