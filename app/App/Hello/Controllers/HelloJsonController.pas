@@ -46,7 +46,7 @@ implementation
          * for route pattern /hello/{name}/json
          * and actual url /hello/John/json
          * placeHolder will contains
-         * { phName : 'name', phValue : 'John'}
+         * { name : 'name', value : 'John'}
          *--------------------------------------*)
         placeholder := args.getArg('name');
         result := TJsonResponse.create(response.headers(), '{"'+ placeholder.name +'":"'+ placeholder.value +'"}');
