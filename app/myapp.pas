@@ -15,10 +15,13 @@ uses
 
 type
 
-    TMyAppServiceProvider = class(TBasicServiceProvider)
+    TMyAppServiceProvider = class(TBasicAppServiceProvider)
     public
         procedure register(const container : IDependencyContainer); override;
-        procedure buildRoutes(const router : IRouter); override;
+        procedure buildRoutes(
+            const container : IDependencyContainer;
+            const router : IRouter
+        ); override;
     end;
 
 implementation
@@ -34,12 +37,14 @@ uses
     HiControllerFactory;
 
 
-    procedure TMyAppServiceProvider.buildDependencies(const container : IDependencyContainer);
+    procedure TMyAppServiceProvider.register(const container : IDependencyContainer);
     begin
         {$INCLUDE Dependencies/dependencies.inc}
     end;
 
-    procedure TMyAppServiceProvider.buildRoutes(const router : IRouter);
+    procedure TMyAppServiceProvider.buildRoutes(
+        const container : IDependencyContainer;
+        const router : IRouter);
     begin
         {$INCLUDE Routes/routes.inc}
     end;
