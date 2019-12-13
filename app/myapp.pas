@@ -15,10 +15,10 @@ uses
 
 type
 
-    TMyApp = class(TSimpleWebApplication)
-    protected
-        procedure buildDependencies(const container : IDependencyContainer); override;
-        procedure buildRoutes(const container : IDependencyContainer); override;
+    TMyAppServiceProvider = class(TBasicServiceProvider)
+    public
+        procedure register(const container : IDependencyContainer); override;
+        procedure buildRoutes(const router : IRouter); override;
     end;
 
 implementation
@@ -34,19 +34,13 @@ uses
     HiControllerFactory;
 
 
-    procedure TMyApp.buildDependencies(const container : IDependencyContainer);
+    procedure TMyAppServiceProvider.buildDependencies(const container : IDependencyContainer);
     begin
         {$INCLUDE Dependencies/dependencies.inc}
     end;
 
-    procedure TMyApp.buildRoutes(const container : IDependencyContainer);
-    var router : IRouter;
+    procedure TMyAppServiceProvider.buildRoutes(const router : IRouter);
     begin
-        router := container.get('router') as IRouter;
-        try
-            {$INCLUDE Routes/routes.inc}
-        finally
-            router := nil;
-        end;
+        {$INCLUDE Routes/routes.inc}
     end;
 end.
