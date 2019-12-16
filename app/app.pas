@@ -21,6 +21,9 @@ begin
      *
      * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *------------------------------------------------*)
-    appInstance := TFanoWebApplication.create(TMyAppServiceProvider.create());
+    appInstance := TFanoWebApplication.create(
+        TMyAppServiceProvider.create(),
+        TMyAppRoutes.create()
+    );
     appInstance.run();
 end.

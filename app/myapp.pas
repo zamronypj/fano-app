@@ -18,10 +18,14 @@ type
     TMyAppServiceProvider = class(TBasicAppServiceProvider)
     public
         procedure register(const container : IDependencyContainer); override;
+    end;
+
+    TMyAppRoutes = class(TInterfacedObject, IRouteBuilder)
+    public
         procedure buildRoutes(
             const container : IDependencyContainer;
             const router : IRouter
-        ); override;
+        );
     end;
 
 implementation
@@ -42,7 +46,7 @@ uses
         {$INCLUDE Dependencies/dependencies.inc}
     end;
 
-    procedure TMyAppServiceProvider.buildRoutes(
+    procedure TMyAppRoutes.buildRoutes(
         const container : IDependencyContainer;
         const router : IRouter);
     begin
