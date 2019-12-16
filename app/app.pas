@@ -21,7 +21,7 @@ begin
      *
      * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *------------------------------------------------*)
-    appInstance := TFanoWebApplication.create(
+    appInstance := TCgiWebApplication.create(
         TMyAppServiceProvider.create(),
         TMyAppRoutes.create()
     );
