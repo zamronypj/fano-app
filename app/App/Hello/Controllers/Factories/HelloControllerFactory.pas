@@ -39,10 +39,11 @@ uses
             container.get('fileReader') as IFileReader
         );
         try
+            viewParams['baseUrl'] := config.getString('baseUrl');
             result := THelloController.create(
                 tmplView,
                 viewParams
-                    .setVar('baseUrl', config.getString('baseUrl'))
+                    //.setVar('baseUrl', config.getString('baseUrl'))
                     .setVar('name', 'Fano')
                     .setVar('appName', config.getString('appName'))
             );
