@@ -58,7 +58,7 @@ implementation
 
         for i:=0 to length(placeholders)-1 do
         begin
-            viewParams.setVar(placeholders[i].name, placeholders[i].value);
+            fViewParams.setVar(placeholders[i].name, placeholders[i].value);
         end;
         result := inherited handleRequest(request, response, args);
     end;
