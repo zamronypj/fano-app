@@ -1,7 +1,6 @@
 # Fano Framework Web Application Skeleton
 
-Web application skeleton using Fano Framework, Pascal web application framework. [View live example.](https://fano.juhara.id)
-
+Web application skeleton using Fano Framework, Pascal web application framework. 
 ## Requirement
 
 - [Free Pascal](https://www.freepascal.org/) >= 3.0
