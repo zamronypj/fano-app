@@ -1,6 +1,6 @@
 # Fano Framework Web Application Skeleton
 
-Web application skeleton using Fano Framework, Pascal web application framework. 
+Web application skeleton using Fano Framework, Pascal web application framework. [View video tutorial](https://youtu.be/bnOqoUBOx7o).
 ## Requirement
 
 - [Free Pascal](https://www.freepascal.org/) >= 3.0
