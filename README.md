@@ -130,7 +130,7 @@ For example on Apache,
 
      <Directory "/home/fanodev/public">
          Options +ExecCGI
-         AllowOverride FileInfo
+         AllowOverride FileInfo Indexes
          Require all granted
          DirectoryIndex app.cgi
          AddHandler cgi-script .cgi
